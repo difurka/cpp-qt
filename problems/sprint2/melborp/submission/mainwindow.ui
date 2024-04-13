@@ -25,6 +25,7 @@
   <property name="windowTitle">
    <string>MELBORP</string>
   </property>
+<<<<<<< HEAD
   <widget class="QWidget" name="centralwidget">
    <widget class="QLineEdit" name="le_word">
     <property name="geometry">
@@ -50,13 +51,20 @@
     </property>
    </widget>
   </widget>
+=======
+  <widget class="QWidget" name="centralwidget"/>
+>>>>>>> 2519a99 (Обновление репы из коммита 8b7cdaeb6ea3f76780108cd6d9982c8b34825e99)
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
      <width>340</width>
+<<<<<<< HEAD
      <height>23</height>
+=======
+     <height>24</height>
+>>>>>>> 2519a99 (Обновление репы из коммита 8b7cdaeb6ea3f76780108cd6d9982c8b34825e99)
     </rect>
    </property>
   </widget>

@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget* parent)
 MainWindow::~MainWindow() {
     delete ui;
 }
+<<<<<<< HEAD
 
 void MainWindow::on_pushButton_clicked()
 {
@@ -29,3 +30,5 @@ QString MainWindow::reverse(const QString & s) const {
     return new_s;
 }
 
+=======
+>>>>>>> 2519a99 (Обновление репы из коммита 8b7cdaeb6ea3f76780108cd6d9982c8b34825e99)

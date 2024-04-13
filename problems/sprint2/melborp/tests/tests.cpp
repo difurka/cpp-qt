@@ -1,4 +1,9 @@
 #include <QtTest>
+<<<<<<< HEAD
+=======
+
+#include <QtTest>
+>>>>>>> 2519a99 (Обновление репы из коммита 8b7cdaeb6ea3f76780108cd6d9982c8b34825e99)
 #include <QCoreApplication>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
@@ -58,12 +63,22 @@ private:
     MainWindow* window;
     QPushButton *yourButton;
     QLineEdit *textView;
+<<<<<<< HEAD
+=======
+    QApplication *app;
+>>>>>>> 2519a99 (Обновление репы из коммита 8b7cdaeb6ea3f76780108cd6d9982c8b34825e99)
 };
 
 
 void TestYourApp::initTestCase()
 {
+<<<<<<< HEAD
 
+=======
+    int argc = 0;
+    char* argv[] = {};
+    app = new QApplication(argc, argv);
+>>>>>>> 2519a99 (Обновление репы из коммита 8b7cdaeb6ea3f76780108cd6d9982c8b34825e99)
 
     window = new MainWindow();
 
@@ -86,8 +101,17 @@ void TestYourApp::initTestCase()
 void TestYourApp::TestMelborpButton_1()
 {
 
+<<<<<<< HEAD
     QString q_original_text = "This is my awesome string!";
     QString q_reversed_text = "!gnirts emosewa ym si sihT";
+=======
+    std::string original_text = "This is my awesome string!";
+    std::string reversed_text;
+    std::reverse_copy(original_text.begin(), original_text.end(), reversed_text.begin());
+
+    QString q_original_text = original_text.c_str();
+    QString q_reversed_text = reversed_text.c_str();
+>>>>>>> 2519a99 (Обновление репы из коммита 8b7cdaeb6ea3f76780108cd6d9982c8b34825e99)
 
     textView->setText(q_original_text);
     QVERIFY2(textView->text() == q_original_text, "Выведенный текст не совпадает с исходным");
@@ -121,8 +145,15 @@ void TestYourApp::TestMelborpButton_2()
 
 void TestYourApp::cleanupTestCase()
 {
+<<<<<<< HEAD
 }
 
 QTEST_MAIN(TestYourApp)
+=======
+    delete app;
+}
+
+QTEST_APPLESS_MAIN(TestYourApp)
+>>>>>>> 2519a99 (Обновление репы из коммита 8b7cdaeb6ea3f76780108cd6d9982c8b34825e99)
 
 #include "tests.moc"

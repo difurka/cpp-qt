@@ -1,4 +1,9 @@
 #include <QtTest>
+<<<<<<< HEAD
+=======
+
+#include <QtTest>
+>>>>>>> 2519a99 (Обновление репы из коммита 8b7cdaeb6ea3f76780108cd6d9982c8b34825e99)
 #include <QCoreApplication>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
@@ -43,12 +48,22 @@ private:
     MainWindow* window;
     QPushButton *yourButton;
     QLineEdit *textView;
+<<<<<<< HEAD
+=======
+    QApplication *app;
+>>>>>>> 2519a99 (Обновление репы из коммита 8b7cdaeb6ea3f76780108cd6d9982c8b34825e99)
 };
 
 
 void TestYourApp::initTestCase()
 {
+<<<<<<< HEAD
 
+=======
+    int argc = 0;
+    char* argv[] = {};
+    app = new QApplication(argc, argv);
+>>>>>>> 2519a99 (Обновление репы из коммита 8b7cdaeb6ea3f76780108cd6d9982c8b34825e99)
 
     window = new MainWindow();
 
@@ -73,8 +88,15 @@ void TestYourApp::TestCloseButton()
 
 void TestYourApp::cleanupTestCase()
 {
+<<<<<<< HEAD
 }
 
 QTEST_MAIN(TestYourApp)
+=======
+    delete app;
+}
+
+QTEST_APPLESS_MAIN(TestYourApp)
+>>>>>>> 2519a99 (Обновление репы из коммита 8b7cdaeb6ea3f76780108cd6d9982c8b34825e99)
 
 #include "tests.moc"

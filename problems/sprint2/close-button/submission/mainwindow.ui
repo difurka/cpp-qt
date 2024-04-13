@@ -14,6 +14,7 @@
    <string>Close Button</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+<<<<<<< HEAD
    <widget class="QPushButton" name="btn_exit">
     <property name="geometry">
      <rect>
@@ -27,6 +28,8 @@
      <string>EXIT</string>
     </property>
    </widget>
+=======
+>>>>>>> 2519a99 (Обновление репы из коммита 8b7cdaeb6ea3f76780108cd6d9982c8b34825e99)
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -34,7 +37,11 @@
      <x>0</x>
      <y>0</y>
      <width>374</width>
+<<<<<<< HEAD
      <height>23</height>
+=======
+     <height>22</height>
+>>>>>>> 2519a99 (Обновление репы из коммита 8b7cdaeb6ea3f76780108cd6d9982c8b34825e99)
     </rect>
    </property>
   </widget>
