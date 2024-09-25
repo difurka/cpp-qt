@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Решение предыдущей задачи
 
 #ifndef MAINWINDOW_H
@@ -59,3 +60,6 @@ private:
     void UnChecked();
 };
 #endif // MAINWINDOW_H
+=======
+решение задачи photoalbum-3
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)

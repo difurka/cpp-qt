@@ -10,6 +10,7 @@ class MainWindow;
 }
 QT_END_NAMESPACE
 
+<<<<<<< HEAD
 enum class Operation {
     NO_OPERATION,
     ADDITION,
@@ -19,6 +20,8 @@ enum class Operation {
     POWER
 };
 
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 class MainWindow : public QMainWindow {
     Q_OBJECT
 
@@ -27,6 +30,7 @@ public:
     ~MainWindow();
 
 private slots:
+<<<<<<< HEAD
     void on_pb_0_clicked();
     void on_pb_1_clicked();
     void on_pb_2_clicked();
@@ -61,4 +65,9 @@ private:
     bool memory_saved_{false};
     void AddResultNumber(int number);
     void AddFormulaSymbol(const QString& operation, Operation type);
+=======
+
+private:
+    Ui::MainWindow* ui;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 };

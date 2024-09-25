@@ -47,6 +47,10 @@ private slots:
 
 private:
     Selector* selector_window;
+<<<<<<< HEAD
+=======
+    QApplication* app;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     QPushButton* btn_cart;
 
 };
@@ -54,7 +58,13 @@ private:
 
 void TestYourApp::initTestCase()
 {
+<<<<<<< HEAD
 
+=======
+    int argc = 0;
+    char* argv[] = {};
+    app = new QApplication(argc, argv);
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
     selector_window = new Selector();
     QVERIFY2(selector_window != nullptr, "Окно приложения не создано");
@@ -138,6 +148,10 @@ void TestYourApp::cleanupTestCase()
     delete selector_window;
 }
 
+<<<<<<< HEAD
 QTEST_MAIN(TestYourApp)
+=======
+QTEST_APPLESS_MAIN(TestYourApp)
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
 #include "tests.moc"

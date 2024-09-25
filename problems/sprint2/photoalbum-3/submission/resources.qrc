@@ -1,4 +1,5 @@
 <RCC>
+<<<<<<< HEAD
     <qresource prefix="/cats">
         <file>images/cat1.jpg</file>
         <file>images/cat2.jpg</file>
@@ -30,4 +31,6 @@
         <file>images/chevron_r.png</file>
         <file>images/chevron_l.png</file>
     </qresource>
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 </RCC>

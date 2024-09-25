@@ -6,8 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
+<<<<<<< HEAD
     <width>543</width>
     <height>591</height>
+=======
+    <width>310</width>
+    <height>362</height>
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
    </rect>
   </property>
   <property name="sizePolicy">
@@ -25,6 +30,7 @@
    <string>Калькулятор</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+<<<<<<< HEAD
    <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0,0,0,0,0,0" columnstretch="0,0">
     <item row="3" column="0">
      <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="4,2,0,3">
@@ -477,6 +483,9 @@
      </layout>
     </item>
    </layout>
+=======
+   <layout class="QGridLayout" name="gridLayout" rowstretch="0,0" columnstretch="0"/>
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
   </widget>
  </widget>
  <resources/>

@@ -102,6 +102,7 @@ void TestYourApp::TestMelborpButton_1()
 {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     QString q_original_text = "This is my awesome string!";
     QString q_reversed_text = "!gnirts emosewa ym si sihT";
 =======
@@ -112,6 +113,10 @@ void TestYourApp::TestMelborpButton_1()
     QString q_original_text = original_text.c_str();
     QString q_reversed_text = reversed_text.c_str();
 >>>>>>> 2519a99 (Обновление репы из коммита 8b7cdaeb6ea3f76780108cd6d9982c8b34825e99)
+=======
+    QString q_original_text = "This is my awesome string!";
+    QString q_reversed_text = "!gnirts emosewa ym si sihT";
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
     textView->setText(q_original_text);
     QVERIFY2(textView->text() == q_original_text, "Выведенный текст не совпадает с исходным");

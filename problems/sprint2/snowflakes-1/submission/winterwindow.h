@@ -55,6 +55,7 @@ public:
     void Draw(prac::QPainter& painter) const {
         // 1. Установите перо в painter. Нужно использовать цвет
         //    снежинки и толщину линии из переменной класса params_.
+<<<<<<< HEAD
         QPen pen(QBrush(params_.color), params_.line_width);
         // border_pen.setWidth(params_.line_width);
         painter.setPen(pen);
@@ -64,6 +65,8 @@ public:
         for (int i=0; i < num_ray; ++i) {
             DrawRotatedVector(painter, params_.center, params_.rotation + pi2/num_ray * i, params_.size);
         }
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
         //
         // 2. Разместите здесь код для рисования шести лучей на основе
         //    переменной params_ и метода DrawRotatedVector.
@@ -79,7 +82,11 @@ public:
     }
 
     QString GetDescription() const {
+<<<<<<< HEAD
         return QString("Размер %1\nТолщина линии %2\nПоворот %3")
+=======
+        return QString("Размер %1\\nТолщина линии %2\\nПоворот %3")
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
             .arg(params_.size)
             .arg(params_.line_width)
             .arg(params_.rotation);
@@ -90,10 +97,16 @@ private:
         Vector2D lay = RotateVector(Vector2D{length, 0}, angle);
         Point2D end = Add(center, lay);
 
+<<<<<<< HEAD
 
         // Нарисуйте линию от точки center до точки end.
         // Используйте метод drawLine класса painter.
         painter.drawLine(QPointF(center.x, center.y), QPointF(end.x, end.y));
+=======
+        // Нарисуйте линию от точки center до точки end.
+        // Используйте метод drawLine класса painter.
+
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
         return end;
     }
 

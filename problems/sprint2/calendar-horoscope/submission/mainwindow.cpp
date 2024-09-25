@@ -8,17 +8,21 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+<<<<<<< HEAD
     ui->le_year->setValidator(new QIntValidator(1, 9999, this));
     static const QStringList months = {
         "январь", "февраль", "март", "апрель", "май", "июнь",
         "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"};
     ui->cb_month->addItems(months);
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+<<<<<<< HEAD
 
 void MainWindow::on_rb_eastern_clicked()
 {
@@ -212,3 +216,5 @@ void MainWindow::on_cb_month_currentIndexChanged(int)
     MakeMagic();
 }
 
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)

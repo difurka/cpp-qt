@@ -138,6 +138,10 @@ private slots:
 private:
     void ValidateSnowflake();
     WinterWindow* window;
+<<<<<<< HEAD
+=======
+    QApplication* app;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     QSlider* sld_size;
     QSlider* sld_rotation;
     QSlider* sld_line;
@@ -146,7 +150,13 @@ private:
 };
 
 void TestYourApp::initTestCase() {
+<<<<<<< HEAD
 
+=======
+    int argc = 0;
+    char* argv[] = {};
+    app = new QApplication(argc, argv);
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 
@@ -155,7 +165,11 @@ void TestYourApp::init() {
     QVERIFY2(window != nullptr, "Окно приложения не создано");
     window->show();
     QVERIFY2(window->isVisible(), "Окно приложения не активируется");
+<<<<<<< HEAD
     QApplication::instance()->processEvents(); // Запуск обработки событий в фоновом режиме для тестирования
+=======
+    app->processEvents(); // Запуск обработки событий в фоновом режиме для тестирования
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
     sld_size = getChild<QSlider>(window, "sld_size", "QSlider");
     sld_rotation = getChild<QSlider>(window, "sld_rotation", "QSlider");
@@ -243,7 +257,11 @@ void TestYourApp::ValidateSnowflake()
 
     LineSet set(1e-5, 0.1);
     set.Set(prac::QPainter::lines.begin(), prac::QPainter::lines.end());
+<<<<<<< HEAD
     qDebug() << prac::QPainter::lines.size() << expected_lines.size();
+=======
+
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     QVERIFY2(prac::QPainter::lines.size() == expected_lines.size(), "Количество линий, которые были нарисовано, не совпадает с ожидаемым");
     for (const auto& line: expected_lines)
     {
@@ -325,12 +343,20 @@ void TestYourApp::TestComplex()
 
 
 void TestYourApp::cleanupTestCase() {
+<<<<<<< HEAD
+=======
+    delete app;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void TestYourApp::cleanup() {
     delete window;
 }
 
+<<<<<<< HEAD
 QTEST_MAIN(TestYourApp)
+=======
+QTEST_APPLESS_MAIN(TestYourApp)
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
 #include "tests.moc"

@@ -8,7 +8,11 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 CONFIG += qt warn_on depend_includepath testcase
 
 isEmpty(MOCK_LIB) {
+<<<<<<< HEAD
     MOCK_LIB=/tmp/practicum-qt-mocks
+=======
+    MOCK_LIB=$$(PRACTICUM_MOCK_LIBRARY)
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 CONFIG += c++17

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #pragma once
 #include <string>
 
@@ -22,3 +23,6 @@ public:
     bool HasMem() const;
     std::string GetNumberRepr() const;
 };
+=======
+// Ваше решение задачи о калькуляторе с классом.
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)

@@ -14,9 +14,16 @@
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QWidget>
 #include <QtWidgets/QSlider>
+<<<<<<< HEAD
 #include <cmath>
 
 #include <QDebug>
+=======
+#include <string>
+#include <thread>
+#include <cmath>
+
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 #include "prac/QPainter"
 
 using namespace std;
@@ -33,6 +40,10 @@ void getChild(T*& child, QObject* parent, const QString& object_name, const QStr
                       .arg(parent->objectName());
     } else {
         message = QString("В %2 не найден %1").arg(object_name).arg(parent->objectName());
+<<<<<<< HEAD
+=======
+        ;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     }
 
     QVERIFY2(child, qPrintable(message));
@@ -67,13 +78,23 @@ private slots:
 private:
     void ValidateSnowflake();
     WinterWindow* window;
+<<<<<<< HEAD
+=======
+    QApplication* app;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     QSlider* sld_size;
     QSlider* sld_rotation;
     QSlider* sld_line;
 };
 
 void TestYourApp::initTestCase() {
+<<<<<<< HEAD
 
+=======
+    int argc = 0;
+    char* argv[] = {};
+    app = new QApplication(argc, argv);
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 
@@ -82,7 +103,11 @@ void TestYourApp::init() {
     QVERIFY2(window != nullptr, "Окно приложения не создано");
     window->show();
     QVERIFY2(window->isVisible(), "Окно приожения не активируется");
+<<<<<<< HEAD
     QApplication::instance()->processEvents(); // Запуск обработки событий в фоновом режиме для тестирования
+=======
+    app->processEvents(); // Запуск обработки событий в фоновом режиме для тестирования
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
     sld_size = getChild<QSlider>(window, "sld_size", "QSlider");
     sld_rotation = getChild<QSlider>(window, "sld_rotation", "QSlider");
@@ -130,7 +155,11 @@ void TestYourApp::ValidateSnowflake()
     double line_width = sld_line->value() / 15.;
 
     checkPens(prac::QPainter::pens, line_width);
+<<<<<<< HEAD
     qDebug() << prac::QPainter::lines.size() ;
+=======
+
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     QVERIFY2(prac::QPainter::lines.size() == 6, "Количество линий, которые были нарисованы, отлично от шести");
     for (auto i = 0; i < 6; ++i)
     {
@@ -189,12 +218,20 @@ void TestYourApp::TestComplex()
 
 
 void TestYourApp::cleanupTestCase() {
+<<<<<<< HEAD
+=======
+    delete app;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void TestYourApp::cleanup() {
     delete window;
 }
 
+<<<<<<< HEAD
 QTEST_MAIN(TestYourApp)
+=======
+QTEST_APPLESS_MAIN(TestYourApp)
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
 #include "tests.moc"

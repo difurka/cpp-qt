@@ -53,12 +53,21 @@
      </colorrole>
     </inactive>
     <disabled>
+<<<<<<< HEAD
      <colorrole role="WindowText">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
         <red>190</red>
         <green>190</green>
         <blue>190</blue>
+=======
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
        </color>
       </brush>
      </colorrole>
@@ -78,6 +87,7 @@
    <string>Кошачий фотоальбом</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+<<<<<<< HEAD
    <widget class="QLabel" name="lbl_img">
     <property name="geometry">
      <rect>
@@ -94,6 +104,8 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
   </widget>
  </widget>
  <resources/>

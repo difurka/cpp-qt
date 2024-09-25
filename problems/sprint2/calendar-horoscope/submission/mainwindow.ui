@@ -6,6 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
+<<<<<<< HEAD
     <width>1090</width>
     <height>607</height>
    </rect>
@@ -16,10 +17,17 @@
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
+=======
+    <width>577</width>
+    <height>384</height>
+   </rect>
+  </property>
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
   <property name="windowTitle">
    <string>Календари и гороскопы</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+<<<<<<< HEAD
    <property name="sizePolicy">
     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
      <horstretch>0</horstretch>
@@ -283,6 +291,9 @@
      </layout>
     </item>
    </layout>
+=======
+   <layout class="QVBoxLayout" name="verticalLayout"/>
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
   </widget>
  </widget>
  <resources/>

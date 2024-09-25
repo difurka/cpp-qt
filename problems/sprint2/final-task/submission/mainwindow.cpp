@@ -1,6 +1,11 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+<<<<<<< HEAD
+=======
+#include <QDebug>
+
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
@@ -12,6 +17,7 @@ MainWindow::MainWindow(QWidget* parent)
 MainWindow::~MainWindow() {
     delete ui;
 }
+<<<<<<< HEAD
 
 void MainWindow::on_pb_dot_clicked() {
     if (input_number_.contains(".")) {
@@ -174,3 +180,5 @@ void MainWindow::on_pb_mc_clicked() {
     memory_saved_ = false;
     ui->l_memory->setText("");
 }
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)

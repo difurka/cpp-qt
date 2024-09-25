@@ -38,6 +38,10 @@ private:
     void setAction(int button_index, std::function<void()> action);
     inline void clickButton(int button_index);
 
+<<<<<<< HEAD
+=======
+    QGuiApplication *app;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     MainWindow* window;
     std::vector<QPushButton*> pb_buttons;
 
@@ -48,7 +52,13 @@ private:
 
 void TestYourApp::initTestCase()
 {
+<<<<<<< HEAD
 
+=======
+    int argc = 0;
+    char* argv[] = {};
+    app = new QApplication(argc, argv);
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 #include <iostream>
@@ -103,6 +113,10 @@ void TestYourApp::TestActions()
 
 void TestYourApp::cleanupTestCase()
 {
+<<<<<<< HEAD
+=======
+    delete app;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void TestYourApp::cleanup()
@@ -110,6 +124,10 @@ void TestYourApp::cleanup()
     delete window;
 }
 
+<<<<<<< HEAD
 QTEST_MAIN(TestYourApp)
+=======
+QTEST_APPLESS_MAIN(TestYourApp)
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
 #include "tests.moc"

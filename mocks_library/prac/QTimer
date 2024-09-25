@@ -17,6 +17,7 @@ class QTimer : public ::QObject{
 
     Q_OBJECT
 
+<<<<<<< HEAD
 public:
     QTimer() {
         last_created_ = this;
@@ -30,10 +31,32 @@ public:
 
     ~QTimer() override =default;
 
+=======
+    bool is_on_ = false;
+    int state_ = 0;
+
+    bool single_shot_ = false;
+    int interval_ = 0;
+
+public:
+    QTimer() = default;
+    QTimer(QMainWindow* w) {
+        (void)w;
+    }
+
+    ~QTimer() override =default;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     bool isOn() const {
         return is_on_;
     }
 
+<<<<<<< HEAD
+=======
+    int getState() const {
+        return state_;
+    }
+
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     int getInterval() const {
         return interval_;
     }
@@ -42,14 +65,21 @@ public:
         emit timeout();
     }
 
+<<<<<<< HEAD
     static QTimer* getLastCreated() {
         return last_created_;
     }
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
 public slots:
     void start(int msec) {
         is_on_ = true;
+<<<<<<< HEAD
         interval_ = msec;
+=======
+        state_ = msec;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     }
 
     void start() {
@@ -66,17 +96,24 @@ public slots:
 
     void stop() {
         is_on_ = false;
+<<<<<<< HEAD
+=======
+        state_ = 0;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     }
 
 signals:
     void timeout();
 
+<<<<<<< HEAD
 private:
     inline static QTimer* last_created_ = nullptr;
 
     bool is_on_ = false;
     bool single_shot_ = false;
     int interval_ = 0;
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 };
 
 

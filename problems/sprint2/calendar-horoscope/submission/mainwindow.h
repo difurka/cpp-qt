@@ -8,6 +8,7 @@ namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
 enum class Calendar {
+<<<<<<< HEAD
     kEastern,
     kTibetan,
     kZoroastrian
@@ -15,6 +16,15 @@ enum class Calendar {
 
 enum class Horoscope {
     kZodiac,
+=======
+    kEast,
+    kTibet,
+    kZoroastr
+};
+
+enum class Horoscope {
+    kZodiak,
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     kDruid
 };
 
@@ -28,6 +38,7 @@ public:
 
 private slots:
 
+<<<<<<< HEAD
     void on_rb_eastern_clicked();
 
 
@@ -55,5 +66,11 @@ private:
     QString ShowCalendar();
     QString ShowHoroscope();
     void MakeMagic();
+=======
+private:
+    Ui::MainWindow *ui;
+    Calendar calendar_ = Calendar::kEast;
+    Horoscope horoscope_ = Horoscope::kZodiak;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 };
 #endif // MAINWINDOW_H

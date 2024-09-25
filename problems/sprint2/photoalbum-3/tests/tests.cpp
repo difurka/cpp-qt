@@ -1,4 +1,9 @@
 #include <QtTest>
+<<<<<<< HEAD
+=======
+
+#include <QtTest>
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 #include <QCoreApplication>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
@@ -55,6 +60,10 @@ public:
 
 private slots:
     void initTestCase();
+<<<<<<< HEAD
+=======
+    void cleanupTestCase();
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     void init();
     void cleanup();
 
@@ -76,12 +85,23 @@ private:
     QString dir_path = ":/cats/images/";
     QDir image_dir;
     QStringList images;
+<<<<<<< HEAD
+=======
+    QGuiApplication *app;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 };
 
 
 
 void TestYourApp::initTestCase()
 {
+<<<<<<< HEAD
+=======
+    int argc = 0;
+    char* argv[] = {};
+    app = new QApplication(argc, argv);
+
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     QDir im_dir(dir_path);
     image_dir = im_dir; // Ask me what is going on, I won't tell you the answer...
     images = im_dir.entryList();
@@ -105,6 +125,10 @@ void TestYourApp::init()
     window->SetFolder(dir_path);
 
     lbl_new_ = FindElementByName<QLabel>(window, "lbl_new_");
+<<<<<<< HEAD
+=======
+//    QVERIFY2(lbl_new_, "Не найден элемент lbl_img класса QLabel");
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 
@@ -186,11 +210,24 @@ void TestYourApp::TestGoRight(){
 }
 
 
+<<<<<<< HEAD
+=======
+void TestYourApp::cleanupTestCase()
+{
+
+    delete app;
+}
+
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 void TestYourApp::cleanup()
 {
     delete window;
 }
 
+<<<<<<< HEAD
 QTEST_MAIN(TestYourApp)
+=======
+QTEST_APPLESS_MAIN(TestYourApp)
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
 #include "tests.moc"

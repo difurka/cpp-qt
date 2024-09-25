@@ -1,4 +1,9 @@
 #include <QtTest>
+<<<<<<< HEAD
+=======
+
+#include <QtTest>
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 #include <QCoreApplication>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
@@ -11,10 +16,16 @@
 #include <QtWidgets/QWidget>
 #include <QtWidgets/QLabel>
 
+<<<<<<< HEAD
 #include <QDebug>
 #include <mainwindow.h>
 
 // #include <string>
+=======
+#include <mainwindow.h>
+
+#include <string>
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
 using namespace std;
 
@@ -110,12 +121,31 @@ private slots:
 
 private:
     MainWindow* window;
+<<<<<<< HEAD
     prac::QTimer* timer;
 };
 
 void TestYourApp::initTestCase()
 {
 
+=======
+    QPushButton* btn_left;
+    QPushButton* btn_right;
+    QLabel* lbl_new_;
+    QString dir_path = ":/cats/images/";
+    QDir image_dir;
+    QStringList images;
+    QGuiApplication *app;
+};
+
+
+
+void TestYourApp::initTestCase()
+{
+    int argc = 0;
+    char* argv[] = {};
+    app = new QApplication(argc, argv);
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     prac::QTime::currentTime() = current_time;
 }
 
@@ -125,20 +155,32 @@ void TestYourApp::init()
     QVERIFY2(window != nullptr, "Окно приложения не создано");
     window->show();
     QVERIFY2(window->isVisible(), "Окно приложения не активируется");
+<<<<<<< HEAD
     
     timer = prac::QTimer::getLastCreated();
     QVERIFY2(timer, "Не найден таймер");
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void TestYourApp::TestMenu0(){
     auto childs = window->children();
+<<<<<<< HEAD
     
     QVERIFY(timer->isOn() == true);
     QVERIFY(timer->getInterval() > 0);
+=======
+    auto action = findElementByText<QAction>(window, "Включить будильник", "QAction");
+    action->trigger();
+
+    QVERIFY(window->GetTimer().isOn() == true);
+    QVERIFY(window->GetTimer().getInterval() > 0);
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void TestYourApp::TestQTime(){
     auto childs = window->children();
+<<<<<<< HEAD
 
     QVERIFY(timer->isOn() == true);
 
@@ -152,10 +194,28 @@ void TestYourApp::TestQTime(){
     QVERIFY(timer->isOn() == true);
     qDebug() << timer->getInterval() << 1000 - current_time2.msec();
     QVERIFY(timer->getInterval() == 1000 - current_time2.msec() );
+=======
+    auto action = findElementByText<QAction>(window, "Включить будильник", "QAction");
+    action->trigger();
+
+    QVERIFY(window->GetTimer().isOn() == true);
+    QVERIFY(window->GetTimer().getInterval() == 1000 - current_time.msec());
+
+    prac::QTime::currentTime() = current_time2;
+
+    window->GetTimer().emitTimeout();
+
+    QVERIFY(window->GetTimer().isOn() == true);
+    QVERIFY(window->GetTimer().getInterval() == 1000 - current_time2.msec());
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void TestYourApp::cleanupTestCase()
 {
+<<<<<<< HEAD
+=======
+    delete app;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void TestYourApp::cleanup()
@@ -163,6 +223,10 @@ void TestYourApp::cleanup()
     delete window;
 }
 
+<<<<<<< HEAD
 QTEST_MAIN(TestYourApp)
+=======
+QTEST_APPLESS_MAIN(TestYourApp)
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
 #include "tests.moc"

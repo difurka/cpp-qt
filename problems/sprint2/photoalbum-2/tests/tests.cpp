@@ -1,4 +1,9 @@
 #include <QtTest>
+<<<<<<< HEAD
+=======
+
+#include <QtTest>
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 #include <QCoreApplication>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
@@ -67,13 +72,23 @@ private slots:
 private:
     MainWindow* window;
     QLabel* lbl_img;
+<<<<<<< HEAD
+=======
+    QGuiApplication *app;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     QPixmap* pixmap;
 };
 
 
 void TestYourApp::initTestCase()
 {
+<<<<<<< HEAD
 
+=======
+    int argc = 0;
+    char* argv[] = {};
+    app = new QApplication(argc, argv);
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void TestYourApp::init()
@@ -228,6 +243,10 @@ void TestYourApp::TestExtremeRatio2()
 
 void TestYourApp::cleanupTestCase()
 {
+<<<<<<< HEAD
+=======
+    delete app;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void TestYourApp::cleanup()
@@ -235,6 +254,10 @@ void TestYourApp::cleanup()
     delete window;
 }
 
+<<<<<<< HEAD
 QTEST_MAIN(TestYourApp)
+=======
+QTEST_APPLESS_MAIN(TestYourApp)
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
 #include "tests.moc"

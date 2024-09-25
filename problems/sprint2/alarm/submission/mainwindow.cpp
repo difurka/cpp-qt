@@ -4,13 +4,17 @@
 #include <prac/QFileDialog>
 #include <QFileInfo>
 
+<<<<<<< HEAD
 // #include <QTime>
 
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+<<<<<<< HEAD
     timer_one_sec_.setSingleShot(true);
 
     // timer_one_sec_.start(1);
@@ -91,12 +95,15 @@ void MainWindow::slotTimeOut() {
         int seconds = ((alarm_time_ - now).count() + 500) / 1000;
         ui->lbl_timeout->setText(QString("Прошло %1 миллисекунд").arg(seconds));
     }
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+<<<<<<< HEAD
 
 void MainWindow::on_pb_start_stop_clicked()
 {
@@ -123,3 +130,5 @@ void MainWindow::on_pb_start_stop_clicked()
     ui->pb_start_stop->setText("Стоп");
 }
 
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)

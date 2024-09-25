@@ -1,4 +1,5 @@
 // Решение предыдущей задачи.
+<<<<<<< HEAD
 #include "winterwindow.h"
 #include "ui_winterwindow.h"
 #include <QColorDialog>
@@ -59,3 +60,5 @@ void WinterWindow::on_btn_color_clicked()
 
 
 
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)

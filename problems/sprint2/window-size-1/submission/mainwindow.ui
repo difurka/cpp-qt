@@ -26,9 +26,12 @@
     <property name="text">
      <string>TextLabel</string>
     </property>
+<<<<<<< HEAD
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -37,7 +40,11 @@
      <x>0</x>
      <y>0</y>
      <width>467</width>
+<<<<<<< HEAD
      <height>23</height>
+=======
+     <height>24</height>
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     </rect>
    </property>
   </widget>

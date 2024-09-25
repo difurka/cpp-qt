@@ -30,9 +30,13 @@ void WinterWindow::paintEvent(QPaintEvent *event) {
         .rotation = double(ui->sld_rotation->value())
     };
 
+<<<<<<< HEAD
     // Создайте снежинку (объект класса SnowFlake) и нарисуйте её методом Draw.
     SnowFlake snow(flake_params);
     snow.Draw(painter);
+=======
+    // Создайте снежинку (объект класса SnowFlake) и нарисуйте её методом draw.
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
     QRect rect(10, 10, width() - 20, height() - 20);
 
@@ -42,8 +46,11 @@ void WinterWindow::paintEvent(QPaintEvent *event) {
 
     // Получите описание снежинки из метода GetDescription,
     // напечатайте этот текст в прямоугольнике rect.
+<<<<<<< HEAD
     QString des = snow.GetDescription();
     painter.drawText(rect, Qt::AlignLeft | Qt::AlignTop, des);
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void WinterWindow::on_btn_color_clicked()
@@ -53,6 +60,9 @@ void WinterWindow::on_btn_color_clicked()
     color_ = dialog.selectedColor();
     update();
 }
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)

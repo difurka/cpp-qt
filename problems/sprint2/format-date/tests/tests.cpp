@@ -83,6 +83,10 @@ private:
     void CheckValidDate(int day, int month, int year, const QString& month_name);
     void CheckInvalidDate();
 
+<<<<<<< HEAD
+=======
+    QGuiApplication *app;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     MainWindow* window;
 
     QLineEdit* le_date;
@@ -128,7 +132,13 @@ T* getChild(QObject* parent, const QString& object_name, const QString& type_nam
 
 void TestYourApp::initTestCase()
 {
+<<<<<<< HEAD
 
+=======
+    int argc = 0;
+    char* argv[] = {};
+    app = new QApplication(argc, argv);
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void TestYourApp::init()
@@ -296,7 +306,11 @@ void TestYourApp::TestNonExistingDate()
 
     auto CheckNonExistingDate = [this] (){
         CheckInvalidDate();
+<<<<<<< HEAD
         QVERIFY2(lbl_message->text() == "Такой даты не существует", "В случае несуществующей даты в поле lbl_message должна быть надпись \"Такой даты не существует\"");
+=======
+        QVERIFY2(lbl_message->text() == "Такой даты не существует", "В случае несуществующей даты в поле lbl_message должна быть надпись \"Некорректная дата\"");
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     };
 
     le_date->setText("30.02.2020");
@@ -309,6 +323,10 @@ void TestYourApp::TestNonExistingDate()
 
 void TestYourApp::cleanupTestCase()
 {
+<<<<<<< HEAD
+=======
+    delete app;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void TestYourApp::cleanup()
@@ -316,6 +334,10 @@ void TestYourApp::cleanup()
     delete window;
 }
 
+<<<<<<< HEAD
 QTEST_MAIN(TestYourApp)
+=======
+QTEST_APPLESS_MAIN(TestYourApp)
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
 #include "tests.moc"

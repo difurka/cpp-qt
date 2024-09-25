@@ -14,6 +14,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+<<<<<<< HEAD
 void MainWindow::on_rb_asc_clicked()
 {
     // Ваш код.
@@ -24,17 +25,31 @@ void MainWindow::on_rb_desc_clicked()
 {
     // Ваш код.
     on_le_unsorted_textChanged("");
+=======
+void MainWindow::on_rb_greater_clicked()
+{
+    // Ваш код.
+}
+
+void MainWindow::on_rb_less_clicked()
+{
+    // Ваш код.
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void MainWindow::on_cb_case_clicked()
 {
     // Ваш код.
+<<<<<<< HEAD
     on_le_unsorted_textChanged("");
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void MainWindow::on_le_unsorted_textChanged(const QString&)
 {
     // Ваш код.
+<<<<<<< HEAD
     auto text = ui->le_unsorted->text().trimmed();
     auto text_vec = text.split(' ');
     bool cas = !ui->cb_case->checkState();
@@ -78,3 +93,6 @@ void MainWindow::on_le_unsorted_textChanged(const QString&)
 
     ui->le_sorted->setText(res_text);
 }
+=======
+}
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)

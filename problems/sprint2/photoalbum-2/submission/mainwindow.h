@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Решение предыдущей задачи
 
 #ifndef MAINWINDOW_H
@@ -33,3 +34,6 @@ private:
     QPixmap active_pixmap;
 };
 #endif // MAINWINDOW_H
+=======
+// Решение предыдущей задачи
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)

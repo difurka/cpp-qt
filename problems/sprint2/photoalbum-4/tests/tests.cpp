@@ -1,4 +1,9 @@
 #include <QtTest>
+<<<<<<< HEAD
+=======
+
+#include <QtTest>
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 #include <QCoreApplication>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
@@ -10,7 +15,10 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 #include <QtWidgets/QLabel>
+<<<<<<< HEAD
 #include <prac/QTimer>
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
 #include <mainwindow.h>
 
@@ -98,6 +106,10 @@ public:
 
 private slots:
     void initTestCase();
+<<<<<<< HEAD
+=======
+    void cleanupTestCase();
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     void init();
     void cleanup();
 
@@ -117,16 +129,31 @@ private:
     MainWindow* window;
     QPushButton* btn_left;
     QPushButton* btn_right;
+<<<<<<< HEAD
     QString dir_path = ":/cats/images/";
     QDir image_dir;
     QStringList images;
     const prac::QTimer* timer;
+=======
+    QLabel* lbl_new_;
+    QString dir_path = ":/cats/images/";
+    QDir image_dir;
+    QStringList images;
+    QGuiApplication *app;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 };
 
 
 
 void TestYourApp::initTestCase()
 {
+<<<<<<< HEAD
+=======
+    int argc = 0;
+    char* argv[] = {};
+    app = new QApplication(argc, argv);
+
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     QDir im_dir(dir_path);
     image_dir = im_dir; // Ask me what is going on, I won't tell you the answer...
     images = im_dir.entryList();
@@ -147,10 +174,17 @@ void TestYourApp::init()
     btn_right = FindElementByName<QPushButton>(window, "btn_right");
     QVERIFY2(btn_right, "Не найден элемент btn_right класса QPushButton");
 
+<<<<<<< HEAD
     timer = prac::QTimer::getLastCreated();
     QVERIFY2(timer, "Не найден таймер");
 
     window->SetFolder(dir_path);
+=======
+    window->SetFolder(dir_path);
+
+    lbl_new_ = FindElementByName<QLabel>(window, "lbl_new_");
+
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void TestYourApp::TestMenu0(){
@@ -158,7 +192,11 @@ void TestYourApp::TestMenu0(){
     auto action = findElementByText<QAction>(window, "Отключить", "QAction");
     action->trigger();
 
+<<<<<<< HEAD
     QVERIFY(timer->getInterval() == 0);
+=======
+    QVERIFY(window->getTimer().getState() == 0);
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void TestYourApp::TestMenu1(){
@@ -166,7 +204,11 @@ void TestYourApp::TestMenu1(){
     auto action = findElementByText<QAction>(window, "1 секунда", "QAction");
     action->trigger();
 
+<<<<<<< HEAD
     QVERIFY(timer->getInterval() == 1000);
+=======
+    QVERIFY(window->getTimer().getState() == 1000);
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void TestYourApp::TestMenu5(){
@@ -174,7 +216,11 @@ void TestYourApp::TestMenu5(){
     auto action = findElementByText<QAction>(window, "5 секунд", "QAction");
     action->trigger();
 
+<<<<<<< HEAD
     QVERIFY(timer->getInterval() == 5000);
+=======
+    QVERIFY(window->getTimer().getState() == 5000);
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void TestYourApp::TestMenu10(){
@@ -182,7 +228,11 @@ void TestYourApp::TestMenu10(){
     auto action = findElementByText<QAction>(window, "10 секунд", "QAction");
     action->trigger();
 
+<<<<<<< HEAD
     QVERIFY(timer->getInterval() == 10000);
+=======
+    QVERIFY(window->getTimer().getState() == 10000);
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void TestYourApp::TestClick(){
@@ -194,11 +244,24 @@ void TestYourApp::TestClick(){
     }
 }
 
+<<<<<<< HEAD
+=======
+void TestYourApp::cleanupTestCase()
+{
+
+    delete app;
+}
+
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 void TestYourApp::cleanup()
 {
     delete window;
 }
 
+<<<<<<< HEAD
 QTEST_MAIN(TestYourApp)
+=======
+QTEST_APPLESS_MAIN(TestYourApp)
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
 #include "tests.moc"

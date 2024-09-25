@@ -61,11 +61,21 @@ private slots:
 private:
     MainWindow* window;
     QLineEdit *le_sorted, *le_unsorted;
+<<<<<<< HEAD
+=======
+    QApplication *app;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 };
 
 void TestYourApp::initTestCase()
 {
+<<<<<<< HEAD
 
+=======
+    int argc = 0;
+    char* argv[] = {};
+    app = new QApplication(argc, argv);
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
     window = new MainWindow();
 
@@ -93,8 +103,15 @@ void TestYourApp::TestSort()
 
 void TestYourApp::cleanupTestCase()
 {
+<<<<<<< HEAD
 }
 
 QTEST_MAIN(TestYourApp)
+=======
+    delete app;
+}
+
+QTEST_APPLESS_MAIN(TestYourApp)
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
 #include "tests.moc"

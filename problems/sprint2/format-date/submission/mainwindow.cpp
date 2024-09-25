@@ -4,10 +4,13 @@
 #include <QRegularExpression>
 #include <QRegularExpressionValidator>
 
+<<<<<<< HEAD
 #include <QIntValidator>
 
 // #include <iostream>
 
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 int DaysPerMonth(int month, int year)
 {
     if (month == 2) {
@@ -38,6 +41,7 @@ int CalculateDaysFromStartYear(int day, int month, int year)
 
 QString MainWindow::GetFormatType1(int day, int month, int year)
 {
+<<<<<<< HEAD
     QString result = "%1.%2.%3";
     QString formatted = result
                             .arg(day, 2, 10, QChar('0'))
@@ -45,10 +49,14 @@ QString MainWindow::GetFormatType1(int day, int month, int year)
                             .arg(year);
     // ui->lbl_format_type1->setText(formatted);
     return formatted;
+=======
+    // Реализуйте метод форматирования даты.
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 QString MainWindow::GetFormatType2(int day, int month, int year)
 {
+<<<<<<< HEAD
     QString result = "%1/%2/%3";
     QString formatted = result
                             .arg(month, 2, 10, QChar('0'))
@@ -56,11 +64,15 @@ QString MainWindow::GetFormatType2(int day, int month, int year)
                             .arg(year);
     // ui->lbl_format_type2->setText(formatted);
     return formatted;
+=======
+    // Реализуйте метод форматирования даты.
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 QString MainWindow::GetFormatType3(int day, int month, int year)
 {
     // Реализуйте метод форматирования даты.
+<<<<<<< HEAD
     QString result = "%1 %2 %3 года";
     QString formatted = result
                             .arg(day, 2, 10, QChar('0'))
@@ -77,6 +89,12 @@ QString MainWindow::GetStrNumDays(int num_days, int year) {
                                .arg(year);
     // ui->lbl_message->setText(formated_mes);
     return formated_mes;
+=======
+}
+
+QString MainWindow::GetStrNumDays(int num_days, int year) {
+    // Метод должен возвращать текст о номере дня в году.
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 MainWindow::MainWindow(QWidget *parent)
@@ -86,9 +104,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     // Установите валидаторы.
+<<<<<<< HEAD
     ui->le_day->setValidator(new QIntValidator(1, 31, this));
     ui->le_month->setValidator(new QIntValidator(1, 12, this));
     ui->le_year->setValidator(new QIntValidator(1, 9999, this));
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
     SetError("Некорректная дата");
 }
@@ -108,6 +129,7 @@ void MainWindow::ShowFormattedDate()
         return;
     }
 
+<<<<<<< HEAD
 
     auto day = ui->le_day->text().toInt();
     auto month = ui->le_month->text().toInt();
@@ -118,11 +140,14 @@ void MainWindow::ShowFormattedDate()
     }
     auto num_days = CalculateDaysFromStartYear(day, month, year);
 
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     // Отобразим результаты.
     // Используйте DaysPerMonth для определения количества дней в месяце.
     // Используйте CalculateDaysFromStartYear для определения номера дня в году.
 
     // Используйте GetFormatType1, GetFormatType2, GetFormatType3 и GetStrNumDays
+<<<<<<< HEAD
     ui->lbl_message->setText(GetStrNumDays(num_days, year));
     ui->lbl_format_type1->setText( GetFormatType1(day,month, year));
     ui->lbl_format_type2->setText( GetFormatType2(day,month, year));
@@ -130,6 +155,8 @@ void MainWindow::ShowFormattedDate()
     // GetFormatType1(day,month, year);
     // GetFormatType2(day,month, year);
     // GetFormatType3(day,month, year);
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     // для определения надписей, которые нужно вывести пользователю.
     // Эти методы реализуйте самостоятельно.
 }
@@ -144,6 +171,7 @@ void MainWindow::SetError(const QString& err_text)
 
 void MainWindow::on_le_date_textChanged(const QString&)
 {
+<<<<<<< HEAD
     if(editing_now_) return;
 
     editing_now_ = true;
@@ -160,11 +188,15 @@ void MainWindow::on_le_date_textChanged(const QString&)
     editing_now_=false;
     ShowFormattedDate();
 
+=======
+    // Пользователь изменил дату. Реализуйте слот.
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void MainWindow::on_le_day_textChanged(const QString&)
 {
     // Пользователь изменил день. Реализуйте слот.
+<<<<<<< HEAD
     if(editing_now_) return;
     editing_now_=true;
 
@@ -177,11 +209,14 @@ void MainWindow::on_le_day_textChanged(const QString&)
     ui->le_date->setText(formatted);
     editing_now_=false;
     ShowFormattedDate();
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void MainWindow::on_le_month_textChanged(const QString&)
 {
     // Пользователь изменил месяц. Реализуйте слот.
+<<<<<<< HEAD
     if(editing_now_) return;
     editing_now_=true;
     QString result = "%1.%2.%3";
@@ -193,11 +228,14 @@ void MainWindow::on_le_month_textChanged(const QString&)
     editing_now_=false;
     ShowFormattedDate();
 
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 void MainWindow::on_le_year_textChanged(const QString&)
 {
     // Пользователь изменил год. Реализуйте слот.
+<<<<<<< HEAD
     if(editing_now_) return;
     editing_now_=true;
     QString result = "%1.%2.%3";
@@ -208,4 +246,6 @@ void MainWindow::on_le_year_textChanged(const QString&)
     ui->le_date->setText(formatted);
     editing_now_=false;
     ShowFormattedDate();
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }

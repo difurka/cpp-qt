@@ -21,7 +21,10 @@
 
 #include <QtTest/QTest>
 
+<<<<<<< HEAD
 #include <QDebug>
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
 template<typename T>
 void getChild(T*& child, QObject* parent, const QString& object_name, const QString& type_name)
@@ -107,6 +110,10 @@ private:
 
     void checkLabels(const QString& expected_memory, const QString& expected_result, const QString& expected_formula);
 
+<<<<<<< HEAD
+=======
+    QGuiApplication *app;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     MainWindow* window;
     std::map<std::string, QPushButton*> keyboard;
     std::map<std::string, std::string> operations;
@@ -156,7 +163,13 @@ void TestYourApp::inputNumber(const std::string& number)
 
 void TestYourApp::initTestCase()
 {
+<<<<<<< HEAD
 
+=======
+    int argc = 0;
+    char* argv[] = {};
+    app = new QApplication(argc, argv);
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 
@@ -186,11 +199,16 @@ void TestYourApp::checkLabels(
     auto result = l_result->text();
     auto formula = l_formula->text();
 
+<<<<<<< HEAD
 
     QVERIFY2(memory == expected_memory, "Текст l_memory не совпадает с ожидаемым");
 
     QVERIFY2(result == expected_result, "Teкст l_result не совпадает с ожидаемым");
 
+=======
+    QVERIFY2(memory == expected_memory, "Текст l_memory не совпадает с ожидаемым");
+    QVERIFY2(result == expected_result, "Teкст l_result не совпадает с ожидаемым");
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     QVERIFY2(formula == expected_formula, "Текст l_formula не совпадает с ожидаемым");
 }
 
@@ -313,7 +331,10 @@ void TestYourApp::TestMemory()
         pushButton(operations["/"]);
         pushButton("MR");
         pushButton("=");
+<<<<<<< HEAD
         qDebug() << l_result->text() << 1;
+=======
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
         QVERIFY2(l_result->text() == "1", "Текст l_result не совпадает с ожидаемым");
     }
 }
@@ -321,6 +342,10 @@ void TestYourApp::TestMemory()
 
 void TestYourApp::cleanupTestCase()
 {
+<<<<<<< HEAD
+=======
+    delete app;
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 }
 
 
@@ -330,7 +355,11 @@ void TestYourApp::cleanup()
 }
 
 
+<<<<<<< HEAD
 QTEST_MAIN(TestYourApp)
+=======
+QTEST_APPLESS_MAIN(TestYourApp)
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 
 
 #include "tests.moc"

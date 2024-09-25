@@ -7,7 +7,11 @@
     <x>0</x>
     <y>0</y>
     <width>367</width>
+<<<<<<< HEAD
     <height>319</height>
+=======
+    <height>315</height>
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
    </rect>
   </property>
   <property name="contextMenuPolicy">
@@ -199,7 +203,11 @@
      <x>0</x>
      <y>0</y>
      <width>367</width>
+<<<<<<< HEAD
      <height>23</height>
+=======
+     <height>24</height>
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
     </rect>
    </property>
    <property name="contextMenuPolicy">
@@ -215,6 +223,20 @@
    </widget>
    <addaction name="menu"/>
   </widget>
+<<<<<<< HEAD
+=======
+  <action name="action_on_off">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Включить будильник</string>
+   </property>
+  </action>
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
   <action name="action_load_file">
    <property name="text">
     <string>Выбрать мелодию</string>
@@ -222,13 +244,25 @@
   </action>
   <action name="action_close">
    <property name="icon">
+<<<<<<< HEAD
     <iconset theme="application-exit">
      <normaloff>.</normaloff>.</iconset>
+=======
+    <iconset theme="application-exit"/>
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
    </property>
    <property name="text">
     <string>Выход</string>
    </property>
   </action>
+<<<<<<< HEAD
+=======
+  <action name="action">
+   <property name="text">
+    <string>ываыва</string>
+   </property>
+  </action>
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
  </widget>
  <resources/>
  <connections>
@@ -248,5 +282,24 @@
     </hint>
    </hints>
   </connection>
+<<<<<<< HEAD
+=======
+  <connection>
+   <sender>MainWindow</sender>
+   <signal>customContextMenuRequested(QPoint)</signal>
+   <receiver>menu</receiver>
+   <slot>showNormal()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>183</x>
+     <y>157</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>87</x>
+     <y>45</y>
+    </hint>
+   </hints>
+  </connection>
+>>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
  </connections>
 </ui>
