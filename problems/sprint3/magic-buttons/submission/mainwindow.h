@@ -29,15 +29,21 @@ private slots:
 
     void on_pb_sett_4_clicked();
 
+<<<<<<< HEAD
 
     void on_pb_button_1_clicked();
     void on_pb_button_2_clicked();
     void on_pb_button_3_clicked();
     void on_pb_button_4_clicked();
 
+=======
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
 private:
     Ui::MainWindow *ui;
     Setting* setting_ = new Setting();
     std::vector<QPushButton*> buttons_;
+<<<<<<< HEAD
     std::vector<std::function<void()>> actions_;
+=======
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
 };

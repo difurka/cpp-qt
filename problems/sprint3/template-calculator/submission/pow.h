@@ -26,5 +26,8 @@ inline Rational Pow(Rational lhs, Rational rhs) {
         return {IntegerPow(lhs.GetDenominator(), -pow), IntegerPow(lhs.GetNumerator(), -pow)};
     }
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))

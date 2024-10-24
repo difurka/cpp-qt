@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
 #pragma once
 
 #include <string>
@@ -8,6 +12,7 @@
 
 using Error = std::string;
 
+<<<<<<< HEAD
 template <typename Number>
 class Calculator {
  private:
@@ -99,3 +104,6 @@ class Calculator {
         return std::to_string(num_);
     }
 };
+=======
+// Реализация шаблонного калькулятора.
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))

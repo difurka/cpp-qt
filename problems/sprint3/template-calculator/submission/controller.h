@@ -38,7 +38,11 @@ std::uint8_t FromString<std::uint8_t>(const std::string& number) {
 template<class Number>
 class Controller
 {
+<<<<<<< HEAD
  public:
+=======
+public:
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
     Controller() {}
 
     void BindWithMainWindow(MainWindow* main_window) {
@@ -56,6 +60,10 @@ class Controller
         view_->SetProcessControlKeyCallback([this](ControlKey key){
             ProcessControlKey(key);
         });
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
         RevealView();
     }
 
@@ -66,6 +74,7 @@ private:
 
     void ProcessOperationKey(Operation operation) {
         switch(operation) {
+<<<<<<< HEAD
         case Operation::ADDITION:
             OnOperation([this](Number x){return calculator_.Add(x);}, " + ");
             break;
@@ -79,6 +88,21 @@ private:
             OnOperation([this](Number x){return calculator_.Div(x);}, " ÷ ");
             break;
         case Operation::POWER:
+=======
+        case Operation::PLUS:
+            OnOperation([this](Number x){return calculator_.Add(x);}, " + ");
+            break;
+        case Operation::MINUS:
+            OnOperation([this](Number x){return calculator_.Sub(x);}, " − ");
+            break;
+        case Operation::MULTIPLY:
+            OnOperation([this](Number x){return calculator_.Mul(x);}, " × ");
+            break;
+        case Operation::DIV:
+            OnOperation([this](Number x){return calculator_.Div(x);}, " ÷ ");
+            break;
+        case Operation::EXP:
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
             OnOperation([this](Number x){return calculator_.Pow(x);}, " ^ ");
             break;
         }
@@ -244,7 +268,11 @@ private:
         view_->SetExtraKey(GetExtraKey());
     }
 
+<<<<<<< HEAD
  private:
+=======
+private:
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
     std::function<std::optional<Error>(Number number)> operation_;
     std::string operation_name_;
 

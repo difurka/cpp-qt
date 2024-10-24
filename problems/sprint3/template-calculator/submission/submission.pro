@@ -20,9 +20,13 @@ HEADERS += \
     calculator.h \
     controller.h \
     mainwindow.h \
+<<<<<<< HEAD
     rational.h \
     pow.h \
     enums.h
+=======
+    rational.h
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
 
 FORMS += \
     mainwindow.ui

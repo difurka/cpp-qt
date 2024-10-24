@@ -1,4 +1,5 @@
 // Используйте ваше решение.
+<<<<<<< HEAD
 #include "functions.h"
 #include <QProcess>
 #include <QSysInfo>
@@ -51,3 +52,5 @@ void OpenCustomDirectory(const QString &path) {
     }
     QDesktopServices::openUrl(QUrl("file://" + path));
 }
+=======
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))

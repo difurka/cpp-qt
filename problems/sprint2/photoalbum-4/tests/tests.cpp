@@ -139,8 +139,11 @@ private:
     QString dir_path = ":/cats/images/";
     QDir image_dir;
     QStringList images;
+<<<<<<< HEAD
     QGuiApplication *app;
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
 };
 
 
@@ -148,12 +151,15 @@ private:
 void TestYourApp::initTestCase()
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     int argc = 0;
     char* argv[] = {};
     app = new QApplication(argc, argv);
 
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
     QDir im_dir(dir_path);
     image_dir = im_dir; // Ask me what is going on, I won't tell you the answer...
     images = im_dir.entryList();
@@ -163,6 +169,9 @@ void TestYourApp::initTestCase()
 
 void TestYourApp::init()
 {
+    int argc = 0;
+    static const QApplication static_app(argc, {});
+
     window = new MainWindow();
     QVERIFY2(window != nullptr, "Окно приложения не создано");
     window->show();
@@ -248,8 +257,6 @@ void TestYourApp::TestClick(){
 =======
 void TestYourApp::cleanupTestCase()
 {
-
-    delete app;
 }
 
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)

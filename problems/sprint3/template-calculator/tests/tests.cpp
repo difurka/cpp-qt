@@ -14,7 +14,11 @@
 
 #include "utils.h"
 #include "calculator_tests.h"
+<<<<<<< HEAD
 // #include "calculator.h"
+=======
+#include "calculator.h"
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
 #include "controller.h"
 
 
@@ -195,7 +199,10 @@ void TestYourApp::checkExtraButton(const QString& type)
             "Text on extra button for Rational type should be \"/\"");
     }
     else {
+<<<<<<< HEAD
         qDebug() << type << "; " <<!tb_extra->isVisible();
+=======
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
         QVERIFY2(!tb_extra->isVisible(), "Extra button should not be visible for integer types");
     }
 }
@@ -227,6 +234,12 @@ void TestYourApp::chooseType(const QString& type) const {
 
 void TestYourApp::init()
 {
+<<<<<<< HEAD
+=======
+    int argc = 0;
+    static const QApplication static_app(argc, {});
+
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
     window = new MainWindow();
 
     QVERIFY2(window != nullptr, "Окно настроек не создано");
@@ -419,6 +432,10 @@ void TestYourApp::cleanup()
     delete window;
 }
 
+<<<<<<< HEAD
 QTEST_MAIN(TestYourApp)
+=======
+QTEST_APPLESS_MAIN(TestYourApp)
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
 
 #include "tests.moc"

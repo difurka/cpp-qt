@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -76,3 +77,6 @@ void MainWindow::on_pb_button_4_clicked()
     actions_[3]();
 }
 
+=======
+// Используйте ваше решение.
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))

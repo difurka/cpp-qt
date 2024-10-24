@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -197,3 +198,6 @@ void MainWindow::on_tb_extra_clicked()
 {
     cb_control_key_(ControlKey::EXTRA_KEY);
 }
+=======
+// Реальзуйте класс главного окна.
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))

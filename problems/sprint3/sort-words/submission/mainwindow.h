@@ -20,6 +20,7 @@ public:
 private slots:
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     void on_rb_desc_clicked();
 
     void on_rb_asc_clicked();
@@ -28,6 +29,11 @@ private slots:
 
     void on_rb_less_clicked();
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+    void on_rb_desc_clicked();
+
+    void on_rb_asc_clicked();
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
 
     void on_cb_case_clicked();
 

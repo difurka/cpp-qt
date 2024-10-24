@@ -1,5 +1,6 @@
 #pragma once
 
+<<<<<<< HEAD
 #include "enums.h"
 #include <QMainWindow>
 #include <functional>
@@ -68,3 +69,11 @@ private slots:
     std::function<void(ControlKey key)> cb_control_key_;
     std::function<void(ControllerType controller)> cb_type_numbers_;
 };
+=======
+#include "calculator.h"
+#include "enums.h"
+
+#include <QMainWindow>
+
+// Реальзуйте класс главного окна.
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))

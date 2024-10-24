@@ -15,6 +15,7 @@ MainWindow::~MainWindow()
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 void MainWindow::on_rb_asc_clicked()
 {
     // Ваш код.
@@ -27,11 +28,14 @@ void MainWindow::on_rb_desc_clicked()
     on_le_unsorted_textChanged("");
 =======
 void MainWindow::on_rb_greater_clicked()
+=======
+void MainWindow::on_rb_asc_clicked()
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
 {
     // Ваш код.
 }
 
-void MainWindow::on_rb_less_clicked()
+void MainWindow::on_rb_desc_clicked()
 {
     // Ваш код.
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
@@ -49,6 +53,7 @@ void MainWindow::on_cb_case_clicked()
 void MainWindow::on_le_unsorted_textChanged(const QString&)
 {
     // Ваш код.
+<<<<<<< HEAD
 <<<<<<< HEAD
     auto text = ui->le_unsorted->text().trimmed();
     auto text_vec = text.split(' ');
@@ -96,3 +101,6 @@ void MainWindow::on_le_unsorted_textChanged(const QString&)
 =======
 }
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+}
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "setting.h"
 #include "ui_setting.h"
 
@@ -52,3 +53,6 @@ void Setting::on_pb_save_clicked() {
     ui->cb_action->setCurrentIndex(0);
     this->close();
 }
+=======
+// Используйте ваше решение.
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))

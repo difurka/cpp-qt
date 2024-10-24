@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #pragma once
 #include <numeric>
 #include <cstdlib>
@@ -156,3 +157,6 @@ inline std::istream& operator>>(std::istream& in, Rational& r) {
     return in;
 }
 
+=======
+// Ваше решение задачи последнего урока темы "Перегрузка операций".
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))

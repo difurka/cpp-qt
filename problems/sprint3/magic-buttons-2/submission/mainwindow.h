@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #pragma once
 
 #include <QMainWindow>
@@ -41,3 +42,6 @@ private:
     std::vector<QPushButton*> buttons_;
     std::vector<std::function<void()>> actions_;
 };
+=======
+// Используйте ваше решение.
+>>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
