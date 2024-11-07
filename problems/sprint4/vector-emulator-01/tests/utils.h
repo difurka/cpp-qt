@@ -18,7 +18,11 @@ void getChild(T*& dst, QObject* parent, const QString& object_name, const QStrin
     {
         message = QString("В %2 не найден %1").arg(object_name).arg(parent->objectName());;
     }
+<<<<<<< HEAD
     qDebug() << message;
+=======
+
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
     QVERIFY2(dst, qPrintable(message));
 }
 
@@ -66,4 +70,8 @@ inline void clickWidget(QWidget* widget)
     QTest::mouseClick(widget, Qt::LeftButton);
 }
 
+<<<<<<< HEAD
 #endif  // UTILS_H
+=======
+#endif  // UTILS_H
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))

@@ -126,11 +126,14 @@ void MainWindow::on_le_amplitude_editingFinished() {
 void MainWindow::CreateSignal() {
     // Обновите сигнал.
     // 1. Получите параметры сигнала через метод GetSignalData().
+<<<<<<< HEAD
     auto data_sig = GetSignalData();
     if (data_sig.has_value()) {
         data_= GenerateSignal(*data_sig);
         repaint();
     }
+=======
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
     // 2. Проверьте, что они корректные.
     // 3. Постройте сигнал, используя функцию GenerateSignal
     //    из файла signal-processing.h и сохраните его в поле data_.
@@ -143,9 +146,12 @@ void MainWindow::on_btn_play_clicked() {
     // 2. Примените к копии ApplyDecayAndAttack с параметром 12000.
     // 3. Добавьте в конец 1200 нулевых отсчётов используя std::fill_n.
     // 4. Проиграйте, используя player_.Play.
+<<<<<<< HEAD
 
     auto sig = data_;
     ApplyDecayAndAttack(sig, 12000);
     std::fill_n(std::back_inserter(sig), 1200, 0);
     player_.Play(sig);
+=======
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
 }

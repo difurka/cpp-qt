@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -330,3 +331,6 @@ void MainWindow::on_pb_shuffle_clicked()
 
 }
 
+=======
+// Используйте предыдущую реализацию.
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))

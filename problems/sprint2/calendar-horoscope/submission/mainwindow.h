@@ -9,6 +9,7 @@ QT_END_NAMESPACE
 
 enum class Calendar {
 <<<<<<< HEAD
+<<<<<<< HEAD
     kEastern,
     kTibetan,
     kZoroastrian
@@ -25,6 +26,15 @@ enum class Horoscope {
 enum class Horoscope {
     kZodiak,
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+    kEastern,
+    kTibetan,
+    kZoroastrian
+};
+
+enum class Horoscope {
+    kZodiac,
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
     kDruid
 };
 
@@ -69,8 +79,13 @@ private:
 =======
 private:
     Ui::MainWindow *ui;
+<<<<<<< HEAD
     Calendar calendar_ = Calendar::kEast;
     Horoscope horoscope_ = Horoscope::kZodiak;
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+    Calendar calendar_ = Calendar::kEastern;
+    Horoscope horoscope_ = Horoscope::kZodiac;
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
 };
 #endif // MAINWINDOW_H

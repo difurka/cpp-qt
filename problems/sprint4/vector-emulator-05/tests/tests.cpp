@@ -824,11 +824,16 @@ void TestYourApp::TestsOrT() {
         };
     pushBackVector(lines);
     setCurrentElement(1);
+<<<<<<< HEAD
     qDebug() << "1\n";
     checkModel();
      qDebug() << "2\n";
     sOrT();
       qDebug() << "1\n";
+=======
+    checkModel();
+    sOrT();
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
     checkModel();
 }
 

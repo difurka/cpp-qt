@@ -21,6 +21,7 @@ public:
 
 private slots:
 
+<<<<<<< HEAD
     void on_pb_pop_clicked();
 
     void on_pb_push_clicked();
@@ -31,6 +32,8 @@ private slots:
 
     void on_p_month_clicked();
 
+=======
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
 private:
     void ApplyModel();
 

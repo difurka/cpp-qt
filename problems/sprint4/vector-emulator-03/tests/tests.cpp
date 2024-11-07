@@ -217,7 +217,11 @@ int TestYourApp::getIndex() const {
 
 void TestYourApp::checkExpectedVector() const {
     const auto actual_vector = getVector();
+<<<<<<< HEAD
     qDebug() << vec.size() << "; act: " << actual_vector.size() << "\n";
+=======
+
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
     QVERIFY2(vec.size() == actual_vector.size(), "Размер вектора не совпадает с ожидаемым");
     const auto size_from_string = txt_size->text().toUInt();
     QVERIFY2(actual_vector.size() == size_from_string, "Размер в поле txt_size не совпадает с реальным");
@@ -557,6 +561,7 @@ void TestYourApp::TestIteratorInvalidation() {
 }
 
 void TestYourApp::TestReserve() {
+<<<<<<< HEAD
     qDebug() << 1 << '\n';
     pushBackVector(default_lines);
     qDebug() << 2 << '\n';
@@ -566,6 +571,13 @@ void TestYourApp::TestReserve() {
 qDebug() << 4 << '\n';
     pushBackVector(default_lines);
 qDebug() << 5 << '\n';
+=======
+    pushBackVector(default_lines);
+    reserve(25);
+    checkModel();
+
+    pushBackVector(default_lines);
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
     checkModel();
 }
 

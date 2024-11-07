@@ -6,13 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
+<<<<<<< HEAD
     <width>605</width>
     <height>657</height>
+=======
+    <width>600</width>
+    <height>647</height>
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
    </rect>
   </property>
   <property name="windowTitle">
    <string>std::vector demo</string>
   </property>
+<<<<<<< HEAD
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
@@ -121,6 +127,9 @@
     </layout>
    </widget>
   </widget>
+=======
+
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
  </widget>
  <resources/>
  <connections/>

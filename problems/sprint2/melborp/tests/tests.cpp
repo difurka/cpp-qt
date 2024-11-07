@@ -1,9 +1,12 @@
 #include <QtTest>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 #include <QtTest>
 >>>>>>> 2519a99 (Обновление репы из коммита 8b7cdaeb6ea3f76780108cd6d9982c8b34825e99)
+=======
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
 #include <QCoreApplication>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>

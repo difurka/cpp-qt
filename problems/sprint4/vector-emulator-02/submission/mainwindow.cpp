@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -185,3 +186,6 @@ void MainWindow::on_list_widget_currentRowChanged(int n)
     }
 }
 
+=======
+// Решение предыдущей задачи о векторе.
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))

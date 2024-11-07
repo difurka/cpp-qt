@@ -1,9 +1,12 @@
 #include <QtTest>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 #include <QtTest>
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
 #include <QCoreApplication>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
@@ -16,9 +19,13 @@
 #include <QtWidgets/QWidget>
 #include <QtWidgets/QLabel>
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include <prac/QTimer>
 =======
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+#include <prac/QTimer>
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
 
 #include <mainwindow.h>
 
@@ -130,6 +137,7 @@ private:
     QPushButton* btn_left;
     QPushButton* btn_right;
 <<<<<<< HEAD
+<<<<<<< HEAD
     QString dir_path = ":/cats/images/";
     QDir image_dir;
     QStringList images;
@@ -144,6 +152,12 @@ private:
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 =======
 >>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
+=======
+    QString dir_path = ":/cats/images/";
+    QDir image_dir;
+    QStringList images;
+    const prac::QTimer* timer;
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
 };
 
 
@@ -184,6 +198,7 @@ void TestYourApp::init()
     QVERIFY2(btn_right, "Не найден элемент btn_right класса QPushButton");
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     timer = prac::QTimer::getLastCreated();
     QVERIFY2(timer, "Не найден таймер");
 
@@ -194,6 +209,12 @@ void TestYourApp::init()
     lbl_new_ = FindElementByName<QLabel>(window, "lbl_new_");
 
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+    timer = prac::QTimer::getLastCreated();
+    QVERIFY2(timer, "Не найден таймер");
+
+    window->SetFolder(dir_path);
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
 }
 
 void TestYourApp::TestMenu0(){
@@ -202,10 +223,14 @@ void TestYourApp::TestMenu0(){
     action->trigger();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     QVERIFY(timer->getInterval() == 0);
 =======
     QVERIFY(window->getTimer().getState() == 0);
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+    QVERIFY(timer->getInterval() == 0);
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
 }
 
 void TestYourApp::TestMenu1(){
@@ -214,10 +239,14 @@ void TestYourApp::TestMenu1(){
     action->trigger();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     QVERIFY(timer->getInterval() == 1000);
 =======
     QVERIFY(window->getTimer().getState() == 1000);
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+    QVERIFY(timer->getInterval() == 1000);
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
 }
 
 void TestYourApp::TestMenu5(){
@@ -226,10 +255,14 @@ void TestYourApp::TestMenu5(){
     action->trigger();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     QVERIFY(timer->getInterval() == 5000);
 =======
     QVERIFY(window->getTimer().getState() == 5000);
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+    QVERIFY(timer->getInterval() == 5000);
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
 }
 
 void TestYourApp::TestMenu10(){
@@ -238,10 +271,14 @@ void TestYourApp::TestMenu10(){
     action->trigger();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     QVERIFY(timer->getInterval() == 10000);
 =======
     QVERIFY(window->getTimer().getState() == 10000);
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+    QVERIFY(timer->getInterval() == 10000);
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
 }
 
 void TestYourApp::TestClick(){

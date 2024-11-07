@@ -224,6 +224,7 @@
    <addaction name="menu"/>
   </widget>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   <action name="action_on_off">
    <property name="checkable">
@@ -237,6 +238,8 @@
    </property>
   </action>
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
   <action name="action_load_file">
    <property name="text">
     <string>Выбрать мелодию</string>
@@ -256,6 +259,7 @@
    </property>
   </action>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   <action name="action">
    <property name="text">
@@ -263,6 +267,8 @@
    </property>
   </action>
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
  </widget>
  <resources/>
  <connections>

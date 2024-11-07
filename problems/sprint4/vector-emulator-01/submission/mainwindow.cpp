@@ -19,6 +19,7 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::ApplyModel() {
+<<<<<<< HEAD
     if (vector_model_.items.empty()) {
         ui->pb_pop->setDisabled(true);
     } else {
@@ -68,3 +69,7 @@ void MainWindow::on_p_month_clicked()
     ApplyModel();
 }
 
+=======
+    // Реализуйте этот метод.
+}
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))

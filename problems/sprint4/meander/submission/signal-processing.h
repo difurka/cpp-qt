@@ -3,8 +3,11 @@
 #include <vector>
 #include <numbers>
 #include <cassert>
+<<<<<<< HEAD
 #include <algorithm>
 #include <cmath>
+=======
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
 
 enum class SignalType {
     kSin,
@@ -23,6 +26,7 @@ struct SignalData {
 inline void ReplicateSignal(std::vector<int16_t>& signal, size_t desired_length) {
     assert(signal.size() > 0);
     // Код этой функции можете взять из урока.
+<<<<<<< HEAD
     size_t wave_length = signal.size();
     while (signal.size() < desired_length) {
         size_t max_insert = desired_length - signal.size();
@@ -63,6 +67,11 @@ inline std::vector<int16_t> GenerateSignal(SignalData data) {
     return signal;
 
 
+=======
+}
+
+inline std::vector<int16_t> GenerateSignal(SignalData data) {
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
     // Создайте сигнал, имеющий нужные параметры.
     // Формула синусоидального сигнала: 
     // data.amplitude * sin(i * 2 * std::numbers::pi / data.wave_length).
@@ -77,11 +86,16 @@ inline std::vector<int16_t> GenerateSignal(SignalData data) {
 
 inline void ApplyDecayAndAttack(std::vector<int16_t>& signal, 
                                 size_t max_length) {
+<<<<<<< HEAD
     // Примените затухание и атаку сигнала.
+=======
+    // Примените атаку и затухание сигнала.
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
     // Используйте принцип, данный в уроке.
     // Затухание применяется к концу сигнала, а 
     // атака симметрично - к началу.
     // Используйте алгоритм transform.
+<<<<<<< HEAD
 
     size_t decay_length = std::min(signal.size(), max_length);
 
@@ -101,4 +115,6 @@ inline void ApplyDecayAndAttack(std::vector<int16_t>& signal,
     auto finish_pos = signal.begin() + decay_length;
     std::transform(signal.begin(), finish_pos, signal.begin(), transformer_att);
 
+=======
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
 }

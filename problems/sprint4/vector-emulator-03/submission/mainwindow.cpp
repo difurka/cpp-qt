@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -205,3 +206,6 @@ void MainWindow::on_btn_reserve_clicked()
     ApplyIterator();
 }
 
+=======
+// Используйте реализацию предыдущего урока.
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))

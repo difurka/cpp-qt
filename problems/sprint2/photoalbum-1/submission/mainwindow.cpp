@@ -41,6 +41,7 @@ void MainWindow::FitImage()
     // Напишите этот метод.
     // 1. Вызовите ResizeImgToFit.
 <<<<<<< HEAD
+<<<<<<< HEAD
     auto resizeing = ResizeImgToFit(active_pixmap, width(), height());
     // 2. Поместите изображение в lbl_img.
     ui->lbl_img->setPixmap(resizeing);
@@ -59,6 +60,11 @@ void MainWindow::FitImage()
     // 3. Измените размер lbl_pixmap.
     // 4. Переместите lbl_pixmap, пользуясь формулами из условия.
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+    // 2. Поместите изображение в lbl_img.
+    // 3. Измените размер lbl_img.
+    // 4. Переместите lbl_img, пользуясь формулами из условия.
+>>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
 }
 
 void MainWindow::resizeEvent(QResizeEvent*)
