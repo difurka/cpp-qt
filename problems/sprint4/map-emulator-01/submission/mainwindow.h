@@ -21,6 +21,7 @@ public:
 
 private slots:
 
+<<<<<<< HEAD
     void on_btn_books_clicked();
 
     void on_btn_begin_clicked();
@@ -43,6 +44,8 @@ private slots:
 
     void on_list_widget_currentRowChanged(int currentRow);
 
+=======
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 private:
     void ApplyModel();
     void ApplyIterator();

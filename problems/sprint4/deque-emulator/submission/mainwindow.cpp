@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "algo.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -320,3 +321,6 @@ void MainWindow::on_pb_cakes_clicked() {
     on_pb_begin_clicked();
     ApplyIterator();
 }
+=======
+// В качестве заготовки возьмите последний эмулятор вектора.
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))

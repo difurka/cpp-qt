@@ -68,14 +68,18 @@ private:
     QLineEdit *textView;
     QLabel *label;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     QApplication *app;
 >>>>>>> 2519a99 (Обновление репы из коммита 8b7cdaeb6ea3f76780108cd6d9982c8b34825e99)
+=======
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 };
 
 
 void TestYourApp::initTestCase()
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 =======
@@ -83,6 +87,9 @@ void TestYourApp::initTestCase()
     char* argv[] = {};
     app = new QApplication(argc, argv);
 >>>>>>> 2519a99 (Обновление репы из коммита 8b7cdaeb6ea3f76780108cd6d9982c8b34825e99)
+=======
+
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 
     window = new MainWindow();
 
@@ -133,6 +140,7 @@ void TestYourApp::TestHelloButton_2()
 void TestYourApp::cleanupTestCase()
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 QTEST_MAIN(TestYourApp)
@@ -142,5 +150,10 @@ QTEST_MAIN(TestYourApp)
 
 QTEST_APPLESS_MAIN(TestYourApp)
 >>>>>>> 2519a99 (Обновление репы из коммита 8b7cdaeb6ea3f76780108cd6d9982c8b34825e99)
+=======
+}
+
+QTEST_MAIN(TestYourApp)
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 
 #include "tests.moc"

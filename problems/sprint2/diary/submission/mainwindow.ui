@@ -18,6 +18,7 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+<<<<<<< HEAD
   <widget class="QWidget" name="centralwidget">
 <<<<<<< HEAD
    <layout class="QGridLayout" name="gridLayout">
@@ -468,6 +469,9 @@
    <layout class="QGridLayout" name="gridLayout"/>
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
   </widget>
+=======
+  <widget class="QWidget" name="centralwidget"/>
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>

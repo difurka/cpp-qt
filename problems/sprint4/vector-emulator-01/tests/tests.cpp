@@ -50,9 +50,12 @@ private:
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     QGuiApplication *app;
 >>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
+=======
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
     MainWindow *window;
 
     QListWidget *list_widget;
@@ -95,12 +98,16 @@ private:
 void TestYourApp::initTestCase()
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     int argc = 0;
     char* argv[] = {};
     app = new QApplication(argc, argv);
 >>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
+=======
+
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 }
 
 
@@ -233,9 +240,12 @@ void TestYourApp::TestMonths() {
 void TestYourApp::cleanupTestCase()
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     delete app;
 >>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
+=======
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 }
 
 void TestYourApp::cleanup()
@@ -244,9 +254,13 @@ void TestYourApp::cleanup()
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 QTEST_MAIN(TestYourApp)
 =======
 QTEST_APPLESS_MAIN(TestYourApp)
 >>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
+=======
+QTEST_MAIN(TestYourApp)
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 
 #include "tests.moc"

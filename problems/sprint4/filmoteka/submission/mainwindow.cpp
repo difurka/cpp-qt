@@ -16,6 +16,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pb_add_clicked() {
     // Получите данные о фильме методом GetMovie().
+<<<<<<< HEAD
     auto movie = GetMovie();
     if (movie.name.isEmpty()) return;
     auto it = movies_.indexOf(movie);
@@ -29,6 +30,8 @@ void MainWindow::on_pb_add_clicked() {
     }
     ApplyModel(movie);
     ApplyMovie(movie);
+=======
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
     // Если фильм уже есть в списке, то отредактируйте его.
     // Если нет — добавьте в список.
     // После изменения списка вызовите ApplyModel.
@@ -38,6 +41,7 @@ void MainWindow::on_pb_add_clicked() {
 
 void MainWindow::ApplyModel(const Movie &selection) {
     // Заполните виджеты ui->cb_list_done и ui->cb_list_wait,
+<<<<<<< HEAD
     ui->cb_list_done->clear();
     ui->cb_list_wait->clear();
     QList<Movie> done, wait;
@@ -61,6 +65,12 @@ void MainWindow::ApplyModel(const Movie &selection) {
     } else {
         ui->cb_list_done->setCurrentIndex(n);
     }
+=======
+    // используя их методы clear и addItems.
+    // Вам пригодится метод ToString.
+    // Также примените выделение, используя метод 
+    // setCurrentIndex.
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 }
 
 QString MainWindow::ToString(const Movie &movie) {
@@ -78,6 +88,7 @@ QString MainWindow::ToString(const Movie &movie) {
 
 QStringList MainWindow::ToString(const QList<Movie> &movies) {
     // Напишите этот метод. Используйте ToString.
+<<<<<<< HEAD
     QStringList res;
     for (const auto& el: movies) {
         res.append(ToString(el));
@@ -88,6 +99,12 @@ QStringList MainWindow::ToString(const QList<Movie> &movies) {
 
 Movie MainWindow::GetMovie() const {
   return Movie{.name = ui->le_name->text(),
+=======
+}
+
+Movie MainWindow::GetMovie() const {
+  return Movie{.name = name,
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
     .genre = static_cast<Genre>(ui->cb_genre->currentIndex()),
     .rating = ui->dsb_rating->value(),
     .is_watched = ui->chb_is_done->isChecked()};
@@ -103,6 +120,7 @@ void MainWindow::ApplyMovie(const Movie &movie) {
 void MainWindow::on_cb_list_wait_currentIndexChanged(int index) {
     // Если index неотрицательный, заполните интерфейс,
     // используя ApplyMovie.
+<<<<<<< HEAD
     if (index>=0) {
         // auto movies = ui->cb_list_wait->itemText(index);
         // auto iter = movies_.begin();
@@ -115,11 +133,14 @@ void MainWindow::on_cb_list_wait_currentIndexChanged(int index) {
         }
         ApplyMovie(wait[index]);
     }
+=======
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 }
 
 void MainWindow::on_cb_list_done_currentIndexChanged(int index) {
     // Если index неотрицательный, заполните интерфейс,
     // используя ApplyMovie.
+<<<<<<< HEAD
     if (index>=0) {
 
         QList<Movie> wait;
@@ -128,4 +149,6 @@ void MainWindow::on_cb_list_done_currentIndexChanged(int index) {
         }
         ApplyMovie(wait[index]);
     }
+=======
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 }

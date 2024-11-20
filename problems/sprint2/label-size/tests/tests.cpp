@@ -73,13 +73,17 @@ private:
     MyWindowWithImage* window;
     QLabel* lbl_pixmap;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     QApplication *app;
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 };
 
 void TestYourApp::initTestCase()
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 =======
@@ -87,6 +91,9 @@ void TestYourApp::initTestCase()
     char* argv[] = {};
     app = new QApplication(argc, argv);
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 }
 
 void TestYourApp::init()
@@ -119,9 +126,12 @@ void TestYourApp::TestDefault()
 void TestYourApp::cleanupTestCase()
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     delete app;
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 }
 
 void TestYourApp::cleanup()
@@ -130,9 +140,13 @@ void TestYourApp::cleanup()
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 QTEST_MAIN(TestYourApp)
 =======
 QTEST_APPLESS_MAIN(TestYourApp)
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+QTEST_MAIN(TestYourApp)
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 
 #include "tests.moc"

@@ -139,9 +139,12 @@ private:
     void ValidateSnowflake();
     WinterWindow* window;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     QApplication* app;
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
     QSlider* sld_size;
     QSlider* sld_rotation;
     QSlider* sld_line;
@@ -151,12 +154,16 @@ private:
 
 void TestYourApp::initTestCase() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     int argc = 0;
     char* argv[] = {};
     app = new QApplication(argc, argv);
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 }
 
 
@@ -166,10 +173,14 @@ void TestYourApp::init() {
     window->show();
     QVERIFY2(window->isVisible(), "Окно приложения не активируется");
 <<<<<<< HEAD
+<<<<<<< HEAD
     QApplication::instance()->processEvents(); // Запуск обработки событий в фоновом режиме для тестирования
 =======
     app->processEvents(); // Запуск обработки событий в фоновом режиме для тестирования
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+    QApplication::instance()->processEvents(); // Запуск обработки событий в фоновом режиме для тестирования
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 
     sld_size = getChild<QSlider>(window, "sld_size", "QSlider");
     sld_rotation = getChild<QSlider>(window, "sld_rotation", "QSlider");
@@ -344,9 +355,12 @@ void TestYourApp::TestComplex()
 
 void TestYourApp::cleanupTestCase() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     delete app;
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 }
 
 void TestYourApp::cleanup() {
@@ -354,9 +368,13 @@ void TestYourApp::cleanup() {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 QTEST_MAIN(TestYourApp)
 =======
 QTEST_APPLESS_MAIN(TestYourApp)
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+QTEST_MAIN(TestYourApp)
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 
 #include "tests.moc"

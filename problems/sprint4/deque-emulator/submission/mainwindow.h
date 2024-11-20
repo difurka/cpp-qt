@@ -1,5 +1,6 @@
 #pragma once
 
+<<<<<<< HEAD
 #include <QMainWindow>
 #include <QStringListModel>
 #include <QListWidgetItem>
@@ -58,3 +59,6 @@ private:
     Ui::MainWindow *ui;
     void ApplyIterator();
 };
+=======
+// В качестве заготовки возьмите последний эмулятор вектора.
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))

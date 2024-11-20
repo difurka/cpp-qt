@@ -64,9 +64,12 @@ public:
 private slots:
     void initTestCase();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     void cleanupTestCase();
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
     void init();
     void cleanup();
 
@@ -89,9 +92,12 @@ private:
     QDir image_dir;
     QStringList images;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     QGuiApplication *app;
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 };
 
 
@@ -117,9 +123,6 @@ void TestYourApp::initTestCase()
 
 void TestYourApp::init()
 {
-    int argc = 0;
-    static const QApplication static_app(argc, {});
-
     window = new MainWindow();
     QVERIFY2(window != nullptr, "Окно приложения не создано");
     window->show();
@@ -222,6 +225,7 @@ void TestYourApp::TestGoRight(){
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
@@ -231,6 +235,8 @@ void TestYourApp::cleanupTestCase()
 {
 
 }
+=======
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
 void TestYourApp::cleanup()
@@ -239,9 +245,13 @@ void TestYourApp::cleanup()
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 QTEST_MAIN(TestYourApp)
 =======
 QTEST_APPLESS_MAIN(TestYourApp)
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+QTEST_MAIN(TestYourApp)
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 
 #include "tests.moc"

@@ -150,7 +150,10 @@ void TestYourApp::checkExpectedMap(const std::map<QString, QString>& expectedMap
         expected.push_back(expectedVector[i].toStdString());
     }
 
+<<<<<<< HEAD
     qDebug() << "act: " << actual.size()<< "; exp: " << expected.size();
+=======
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
     QVERIFY2(expected.size() == actual.size(), "Размер словаря не совпадает с ожидаемым");
     const auto size_from_string = txt_size->text().toUInt();
     QVERIFY2(actual.size() == size_from_string, "Размер в поле txt_size не совпадает с реальным");
@@ -166,7 +169,10 @@ void TestYourApp::checkExpectedMap(const std::map<QString, QString>& expectedMap
 
     const auto actual_pos = list_widget->currentRow();
     const auto expected_pos = std::distance<std::map<QString, QString>::const_iterator>(dict.begin(), it);
+<<<<<<< HEAD
     qDebug() << "act: " << actual_pos << "; exp: " << expected_pos;
+=======
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
     QVERIFY2(actual_pos == expected_pos, "Индекс выбранного элемента не совпадает с ожидаемым");
 }
 

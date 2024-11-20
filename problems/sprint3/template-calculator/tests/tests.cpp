@@ -433,9 +433,13 @@ void TestYourApp::cleanup()
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 QTEST_MAIN(TestYourApp)
 =======
 QTEST_APPLESS_MAIN(TestYourApp)
 >>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
+=======
+QTEST_MAIN(TestYourApp)
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 
 #include "tests.moc"

@@ -31,12 +31,16 @@ void WinterWindow::paintEvent(QPaintEvent *event) {
     };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Создайте снежинку (объект класса SnowFlake) и нарисуйте её методом Draw.
     SnowFlake snow(flake_params);
     snow.Draw(painter);
 =======
     // Создайте снежинку (объект класса SnowFlake) и нарисуйте её методом draw.
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+    // Создайте снежинку (объект класса SnowFlake) и нарисуйте её методом Draw.
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 
     QRect rect(10, 10, width() - 20, height() - 20);
 

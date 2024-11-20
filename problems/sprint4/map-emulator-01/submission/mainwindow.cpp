@@ -15,6 +15,7 @@ MainWindow::~MainWindow() {
 
 void MainWindow::ApplyModel() {
     // Применить модель.
+<<<<<<< HEAD
     if (map_model_.items.empty()) {
         ui->btn_erase->setDisabled(true);
     } else {
@@ -36,10 +37,13 @@ void MainWindow::ApplyModel() {
     ui->list_widget->addItem("end");
 
     map_model_.iterator = preserve_iter;
+=======
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
 }
 
 void MainWindow::ApplyIterator() {
     // Применить итератор.
+<<<<<<< HEAD
     auto dist = std::distance(map_model_.items.begin(), map_model_.iterator);
     ui->list_widget->setCurrentRow(dist);
     if (map_model_.iterator == map_model_.items.end()) {
@@ -199,3 +203,6 @@ void MainWindow::on_list_widget_currentRowChanged(int n)
     }
 }
 
+=======
+}
+>>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
