@@ -235,11 +235,14 @@ void TestYourApp::chooseType(const QString& type) const {
 void TestYourApp::init()
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     int argc = 0;
     static const QApplication static_app(argc, {});
 
 >>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
+=======
+>>>>>>> 8abeace (Обновление репы из коммита 0829cb69b09bff8968664b9181a8531fdb0170f5 (#13))
     window = new MainWindow();
 
     QVERIFY2(window != nullptr, "Окно настроек не создано");

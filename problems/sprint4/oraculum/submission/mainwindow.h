@@ -30,7 +30,10 @@ private slots:
 private:
     // Разместите тут переменные, использующиеся в бинарном поиске:
     // a_, b_, m_.
+<<<<<<< HEAD
     int a_, b_, m_;
+=======
+>>>>>>> 8abeace (Обновление репы из коммита 0829cb69b09bff8968664b9181a8531fdb0170f5 (#13))
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H

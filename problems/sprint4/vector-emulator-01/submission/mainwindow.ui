@@ -19,6 +19,7 @@
    <string>std::vector demo</string>
   </property>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
@@ -130,7 +131,11 @@
 =======
 
 >>>>>>> 8d1ad25 (Обновление репы из коммита e58c1d9066fd9b4a8c0b5030c44729a77f06dbed (#10))
+=======
+  <widget class="QWidget" name="centralwidget"/>
+>>>>>>> 8abeace (Обновление репы из коммита 0829cb69b09bff8968664b9181a8531fdb0170f5 (#13))
  </widget>
  <resources/>
  <connections/>
 </ui>
+

@@ -13,6 +13,10 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8abeace (Обновление репы из коммита 0829cb69b09bff8968664b9181a8531fdb0170f5 (#13))
     friend class TestMainWindow;
 
 public:

@@ -103,8 +103,12 @@ Movie MainWindow::GetMovie() const {
 }
 
 Movie MainWindow::GetMovie() const {
+<<<<<<< HEAD
   return Movie{.name = name,
 >>>>>>> 47bc733 (Обновление репы из коммита b47b06684c4e76b7854de46134a95c1bfc70a120 (#11))
+=======
+  return Movie{.name = ui->le_name->text(),
+>>>>>>> 8abeace (Обновление репы из коммита 0829cb69b09bff8968664b9181a8531fdb0170f5 (#13))
     .genre = static_cast<Genre>(ui->cb_genre->currentIndex()),
     .rating = ui->dsb_rating->value(),
     .is_watched = ui->chb_is_done->isChecked()};
