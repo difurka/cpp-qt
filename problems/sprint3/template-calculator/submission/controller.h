@@ -75,6 +75,7 @@ private:
     void ProcessOperationKey(Operation operation) {
         switch(operation) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         case Operation::ADDITION:
             OnOperation([this](Number x){return calculator_.Add(x);}, " + ");
             break;
@@ -90,19 +91,26 @@ private:
         case Operation::POWER:
 =======
         case Operation::PLUS:
+=======
+        case Operation::ADDITION:
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))
             OnOperation([this](Number x){return calculator_.Add(x);}, " + ");
             break;
-        case Operation::MINUS:
+        case Operation::SUBTRACTION:
             OnOperation([this](Number x){return calculator_.Sub(x);}, " − ");
             break;
-        case Operation::MULTIPLY:
+        case Operation::MULTIPLICATION:
             OnOperation([this](Number x){return calculator_.Mul(x);}, " × ");
             break;
-        case Operation::DIV:
+        case Operation::DIVISION:
             OnOperation([this](Number x){return calculator_.Div(x);}, " ÷ ");
             break;
+<<<<<<< HEAD
         case Operation::EXP:
 >>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
+=======
+        case Operation::POWER:
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))
             OnOperation([this](Number x){return calculator_.Pow(x);}, " ^ ");
             break;
         }

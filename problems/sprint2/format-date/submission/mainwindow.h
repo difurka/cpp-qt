@@ -36,9 +36,12 @@ private:
     QString GetFormatType2(int day, int month, int year);
     QString GetFormatType3(int day, int month, int year);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     int CalculateDaysFromStartYear(int day, int month, int year);
 >>>>>>> ed151b7 (Обновление репы из коммита 5bb7176501eee9f1f0866493eda49c1fcf90db60)
+=======
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))
 
     QString GetStrNumDays(int num_days, int year);
     void ShowFormattedDate();

@@ -1,4 +1,5 @@
 #pragma once
+<<<<<<< HEAD
 
 #include "utility/utility.h"
 #include <QDebug>
@@ -23,3 +24,5 @@ struct DrawContext {
     Painter& painter;
     // const Darkener& darkener;
 };
+=======
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))

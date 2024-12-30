@@ -8,6 +8,7 @@
 
 #include <ranges>
 
+<<<<<<< HEAD
 // Графические ресурсы часто называют ассетами
 // Графические ресурсы часто называют ассетами (от англ. asset — «ценность»).
 // В игре будут использоваться два вида ассетов:
@@ -18,6 +19,8 @@
 
 // Для задания персонажей и предметов понадобятся спрайты. Спрайт накладывается на холст в нужном месте.
 // Спрайты и тайлы задаются структурой Asset
+=======
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))
 struct Asset {
     void Rotate(int right_angles) {
         pixmap = pixmap.transformed(QTransform().rotate(right_angles * 90));
@@ -27,7 +30,11 @@ struct Asset {
         return !pixmap.isNull();
     }
 
+<<<<<<< HEAD
     QPixmap pixmap; // изображение
+=======
+    QPixmap pixmap;
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))
 };
 
 struct AnimatedAsset {
@@ -68,7 +75,10 @@ private:
 using AssetInDirections = TAssetInDirections<Asset>;
 using AnimatedAssetInDirections = TAssetInDirections<AnimatedAsset>;
 
+<<<<<<< HEAD
 //  загрузки ассетов из ресурсов
+=======
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))
 class AssetLoader {
 public:
     Asset LoadByPath(const QString& path) const {
@@ -98,7 +108,10 @@ public:
         return result;
     }
 
+<<<<<<< HEAD
     // загружать спрайты для объекта
+=======
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))
     AssetInDirections LoadWithDirection(const std::string& category, const std::string& prefix) const {
         return AssetInDirections(
             LoadSprite(category, prefix + "-up"),

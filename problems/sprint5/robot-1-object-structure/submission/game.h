@@ -1,4 +1,5 @@
 #pragma once
+<<<<<<< HEAD
 #include "context.h"
 #include "player.h"
 
@@ -47,3 +48,5 @@ private:
     Player* player_;
     Field field_;
 };
+=======
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))

@@ -21,12 +21,18 @@ HEADERS += \
     controller.h \
     mainwindow.h \
 <<<<<<< HEAD
+<<<<<<< HEAD
     rational.h \
     pow.h \
     enums.h
 =======
     rational.h
 >>>>>>> 6c5c66a (Обновление репы из коммита 53668ea9ce6dd95fb405d3721acc88e641f7360c (#8))
+=======
+    rational.h \
+    pow.h \
+    enums.h
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))
 
 FORMS += \
     mainwindow.ui

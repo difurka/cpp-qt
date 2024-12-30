@@ -1,10 +1,14 @@
 #include "field_elements.h"
 #include "mainwindow.h"
 
+<<<<<<< HEAD
 #include "objects.h"
 #include "player.h"
 #include "controller.h"
 #include "game.h"
+=======
+#include "player.h"
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))
 
 #include <QApplication>
 
@@ -12,6 +16,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
+<<<<<<< HEAD
     Game game{10, 10};
     Player player{game.GetContext(), {5, 5, 0}, Direction::kRight};
     game.SetPlayer(&player);
@@ -152,3 +157,14 @@ Trying to go
 Player stoped on wall
 >>> New player position:  "5,5,0"  dir:  "left"
  */
+=======
+    Game game{};
+    Player player{game.GetContext(), {10, 10, 0}, Direction::kRight};
+    FloorTile floor1;
+    EdgeWall wall1;
+
+    MainWindow w{game};
+    w.show();
+    return a.exec();
+}
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))

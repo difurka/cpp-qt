@@ -2,10 +2,15 @@
 #define MAINWINDOW_H
 
 #include "game.h"
+<<<<<<< HEAD
 #include "controller.h"
 
 #include <QMainWindow>
 #include <QKeyEvent>
+=======
+
+#include <QMainWindow>
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,6 +24,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+<<<<<<< HEAD
     MainWindow(Game& game, Controller& controller, QWidget *parent = nullptr);
     ~MainWindow();
 
@@ -44,5 +50,13 @@ private:
     Ui::MainWindow *ui;
     Game& game_;
     Controller& controller_;
+=======
+    MainWindow(Game& game, QWidget *parent = nullptr);
+    ~MainWindow();
+
+private:
+    Ui::MainWindow *ui;
+    Game& game_;
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))
 };
 #endif // MAINWINDOW_H

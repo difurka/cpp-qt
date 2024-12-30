@@ -6,7 +6,10 @@
 #include <tuple>
 #include <string>
 #include <sstream>
+<<<<<<< HEAD
 #include <QString>
+=======
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))
 
 enum Orientation {
     kVertical, kHorizontal
@@ -25,6 +28,7 @@ inline Direction Invert(Direction dir) {
     }
 }
 
+<<<<<<< HEAD
 inline QString DirectionText(Direction dir) {
     switch(dir) {
     case kUp: return "up";
@@ -34,6 +38,8 @@ inline QString DirectionText(Direction dir) {
     }
 }
 
+=======
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))
 inline Orientation ToOrientation(Direction dir) {
     switch(dir) {
     case kUp:
@@ -130,15 +136,19 @@ struct Coordinate {
         return ToTuple() == r.ToTuple();
     }
 
+<<<<<<< HEAD
     QString GetTextCoord() const {
         return "\"" + QString::number(x_pos) +"," + QString::number(y_pos) + "," + QString::number(z_pos) + "\"";
     }
 
+=======
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))
     int x_pos = 0;
     int y_pos = 0;
     int z_pos = 0;
 };
 
+<<<<<<< HEAD
 inline std::ostream& operator<<(std::ostream& out, const Coordinate& coord) {
     out  << coord.x_pos << "," << coord.y_pos << "," << coord.z_pos;
     return out;
@@ -146,6 +156,8 @@ inline std::ostream& operator<<(std::ostream& out, const Coordinate& coord) {
 
 
 
+=======
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))
 inline std::optional<Direction> GetDirectionToward(Coordinate from, Coordinate to) {
     if (from.x_pos < to.x_pos) {
         return Direction::kRight;

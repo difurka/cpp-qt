@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "characters.h"
 #include "field_elements.h"
 #include "mainwindow.h"
@@ -69,3 +70,6 @@ int main(int argc, char *argv[])
     w.show();
     return a.exec();
 }
+=======
+#pragma once
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))

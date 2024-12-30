@@ -10,12 +10,21 @@
 
 #include <QtTest>
 
+<<<<<<< HEAD
 // #include <iostream>
 
 // #include <algorithm>
 // #include <iterator>
 // #include <vector>
 // #include <string>
+=======
+#include <iostream>
+
+#include <algorithm>
+#include <iterator>
+#include <vector>
+#include <string>
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))
 
 #include "field_elements.h"
 #include "player.h"
@@ -24,7 +33,11 @@
 
 #include "mainwindow.h"
 
+<<<<<<< HEAD
 // #include "utils.h"
+=======
+#include "utils.h"
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))
 
 
 class TestYourApp : public QObject
@@ -48,12 +61,17 @@ private:
 
 void TestYourApp::init()
 {
+<<<<<<< HEAD
     Game game{10, 10};
     Controller controller{game};
 
     // MainWindow w{game, controller};
     // Game game{};
     window = new MainWindow{game, controller};
+=======
+    Game game{};
+    window = new MainWindow{game};
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))
 
     QVERIFY2(window != nullptr, "Главное окно не создано");
     window->show();

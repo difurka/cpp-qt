@@ -1,4 +1,5 @@
 #pragma once
+<<<<<<< HEAD
 #include "context.h"
 
 #include "utility/geometry.h"
@@ -79,3 +80,5 @@ public:
     // Метод CanCover определяет, может ли персонаж character встать на клетку с объектом.
     virtual bool CanCover(const Character&, Direction) const {return !IsVisible();};
 };
+=======
+>>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))
