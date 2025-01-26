@@ -14,8 +14,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
 void MainWindow::UpdateSizeLabel() {
     // Доработайте этот метод.
     auto new_text = std::to_string(width()) + "x" + std::to_string(height());
     ui->lbl_size->setText(QString::fromStdString(new_text));
+    ui->lbl_size->resize(width(), height());
+    ui->lbl_size->move(0,0);
 }

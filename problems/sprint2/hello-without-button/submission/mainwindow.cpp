@@ -11,3 +11,17 @@ MainWindow::MainWindow(QWidget* parent)
 MainWindow::~MainWindow() {
     delete ui;
 }
+
+void MainWindow::on_le_name_textChanged(const QString &arg1)
+{
+    if (arg1.isEmpty()) {
+        ui->lbl_result->setText("Введите имя");
+    } else {
+        // auto name = arg1;
+        QString greet = "Привет из Qt, "+ arg1+ "!";
+        ui->lbl_result->setText(greet);
+
+    }
+
+}
+

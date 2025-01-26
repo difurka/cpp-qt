@@ -53,12 +53,12 @@
      </colorrole>
     </inactive>
     <disabled>
-     <colorrole role="Base">
+     <colorrole role="WindowText">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>0</red>
-        <green>0</green>
-        <blue>0</blue>
+        <red>190</red>
+        <green>190</green>
+        <blue>190</blue>
        </color>
       </brush>
      </colorrole>
@@ -78,6 +78,22 @@
    <string>Кошачий фотоальбом</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="lbl_img">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>800</width>
+      <height>600</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Место для изображения</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

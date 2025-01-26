@@ -11,3 +11,11 @@ MainWindow::MainWindow(QWidget* parent)
 MainWindow::~MainWindow() {
     delete ui;
 }
+
+void MainWindow::on_btn_hello_clicked()
+{
+    auto name = ui->le_name->text();
+    QString greet = "Привет из Qt, "+ name+ "!";
+    ui->lbl_result->setText(greet);
+}
+
