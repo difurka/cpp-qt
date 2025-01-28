@@ -5,6 +5,8 @@
 #include "additemsnotification.h"
 #include "cartwindow.h"
 
+#include <QIntValidator>
+
 bool IsValueInVector(const std::vector<QString>& vector, QString value) {
     for (const auto& item: vector) {
         if (item == value) {
@@ -41,6 +43,9 @@ Selector::Selector(QWidget *parent) :
     for(const auto& item : items) {
         item.item_name->SetCountLabel(item.item_count);
     }
+
+    ui->le_lines_number->setValidator(new QIntValidator(1, 4, this));
+
 }
 
 Selector::~Selector()
@@ -50,7 +55,14 @@ Selector::~Selector()
 
 void Selector::on_btn_cart_clicked()
 {
-    // Напишите этот метод.
+    auto items = GetCartItems();
+    if (items.empty()) {
+        AddItemsNotification dialog{this};
+        dialog.exec();
+    } else {
+        CartWindow dialog_g(items, this);
+        dialog_g.exec();
+    }
 }
 
 std::vector<CartItem> Selector::GetCartItems() const {

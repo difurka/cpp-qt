@@ -4,6 +4,8 @@
 #include <QRegularExpression>
 #include <QRegularExpressionValidator>
 
+#include <QIntValidator>
+
 int DaysPerMonth(int month, int year)
 {
     if (month == 2) {
@@ -58,6 +60,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     // Установите валидаторы.
+    ui->le_day->setValidator(new QIntValidator(1, 31, this));
+    ui->le_month->setValidator(new QIntValidator(1, 12, this));
+    ui->le_year->setValidator(new QIntValidator(1, 9999, this));
 
     SetError("Некорректная дата");
 }
@@ -96,20 +101,69 @@ void MainWindow::SetError(const QString& err_text)
 
 void MainWindow::on_le_date_textChanged(const QString&)
 {
+    if(editing_now_) return;
+
+    editing_now_=true;
     // Пользователь изменил дату. Реализуйте слот.
+    // Такой split разбивает строку по точкам.
+    // Он возвращает значение типа QStringList,
+    // похожее на std::vector<QString>.
+    auto arr = ui->le_date->text().split(".");
+    if(arr.size() == 3) {
+        ui->le_day->setText(arr[0]);
+        ui->le_month->setText(arr[1]);
+        ui->le_year->setText(arr[2]);
+    }
+
+    ShowFormattedDate();
+    editing_now_=false;
+
+
 }
 
 void MainWindow::on_le_day_textChanged(const QString&)
 {
     // Пользователь изменил день. Реализуйте слот.
+    if(editing_now_) return;
+    editing_now_=true;
+
+    QString result = "%1.%2.%3";
+    QString formatted = result
+                            .arg(ui->le_day->text().toStdString(), 2, 10, QChar('0'))
+                            .arg(ui->le_month->text().toStdString(), 2, 10, QChar('0'))
+                            .arg(ui->le_year->text());
+
+    ui->le_date->setText(formatted);
+    ShowFormattedDate();
+    editing_now_=false;
 }
 
 void MainWindow::on_le_month_textChanged(const QString&)
 {
     // Пользователь изменил месяц. Реализуйте слот.
+    if(editing_now_) return;
+    editing_now_=true;
+    QString result = "%1.%2.%3";
+    QString formatted = result
+                            .arg(ui->le_day->text().toStdString(), 2, 10, QChar('0'))
+                            .arg(ui->le_month->text().toStdString(), 2, 10, QChar('0'))
+                            .arg(ui->le_year->text());
+    ui->le_date->setText(formatted);
+    ShowFormattedDate();
+    editing_now_=false;
 }
 
 void MainWindow::on_le_year_textChanged(const QString&)
 {
     // Пользователь изменил год. Реализуйте слот.
+    if(editing_now_) return;
+    editing_now_=true;
+    QString result = "%1.%2.%3";
+    QString formatted = result
+                            .arg(ui->le_day->text(), 2, 10, QChar('0'))
+                            .arg(ui->le_month->text(), 2, 10, QChar('0'))
+                            .arg(ui->le_year->text());
+    ui->le_date->setText(formatted);
+    ShowFormattedDate();
+    editing_now_=false;
 }
