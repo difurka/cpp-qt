@@ -5,96 +5,144 @@
 #include <memory>
 #include <prac/QTimer>
 
+#include "characters.h"
 #include "field_elements.h"
-#include "objects.h"
 #include "game.h"
 #include "mainwindow.h"
+#include "objects.h"
 #include "player.h"
+#include "utility/assets.h"
+#include "utility/random.h"
 #include "utility/timer.h"
-#include "characters.h"
+#include "utility/utility.h"
 
-
-class TestYourApp : public QObject
-{
+class TestYourApp : public QObject {
     Q_OBJECT
 public:
-    TestYourApp()=default;
-    ~TestYourApp()=default;
+    TestYourApp() = default;
+    ~TestYourApp() = default;
 
 private slots:
 
     void init();
     void cleanup();
 
-    void TestDefault();
-
-private:
-
+    void TestContext();
+    void TestDoorDrawing();
+    void TestFloorDrawing();
 };
 
-void MakeRoom(Floor& floor, Wall& wall, Tile& tile, int x1, int x2, int y1, int y2) {
-    for(int i = x1; i <= x2; ++i) {
-        for(int j = y1; j <= y2; ++j) {
-            floor.SetTile({i, j}, &tile);
-            if (i == x1) {
-                floor.SetWall({i, j}, Direction::kLeft, &wall);
-            }
-            if (i == x2) {
-                floor.SetWall({i, j}, Direction::kRight, &wall);
-            }
-            if (j == y1) {
-                floor.SetWall({i, j}, Direction::kUp, &wall);
-            }
-            if (j == y2) {
-                floor.SetWall({i, j}, Direction::kDown, &wall);
-            }
+
+void TestYourApp::init() {
+}
+
+void TestYourApp::TestContext() {
+    ObjectMap<Object> object_map{};
+    Field field{10, 20};
+    RandomGen random_gen;
+    AssetLoader asset_loader;
+    const GameContext context{object_map, field, random_gen, asset_loader};
+
+    [[maybe_unused]] const RandomGen& random_gen_ref = context.random;
+    [[maybe_unused]] const AssetLoader& asset_loader_ref = context.asset_loader;
+
+    QPainter qpainter{};
+    Painter painter{qpainter};
+    const DrawContext draw_context{painter};
+    [[maybe_unused]] const Painter& painter_ref = draw_context.painter;
+}
+
+void TestYourApp::TestDoorDrawing() {
+    QPainter qpainter{};
+    Painter painter{qpainter};
+    DrawContext draw_context{painter};
+    constexpr Coordinate current_pose{10, 20};
+    constexpr Orientation direction{Orientation::kHorizontal};
+    const Door door;
+    door.Draw(draw_context, current_pose, direction);
+
+    auto& rect_params = painter.GetRectParams();
+
+    QVERIFY(rect_params.size() == 2);
+
+    // First frame
+    const auto first_params = rect_params.at(0);
+
+    QCOMPARE(first_params.p1, CoordinateF(current_pose));
+    QCOMPARE(first_params.p2, CoordinateF(current_pose) + CoordinateF(0, 0, 1));
+    QCOMPARE(first_params.p3,
+             first_params.p2 + CoordinateF(Coordinate::FromOrientation(direction)) * 0.5);
+
+    // Second frame
+    const auto second_params = rect_params.at(1);
+
+    QCOMPARE(second_params.p1,
+             CoordinateF(current_pose) + CoordinateF(Coordinate::FromOrientation(direction)));
+    QCOMPARE(second_params.p2, second_params.p1 + CoordinateF(0, 0, 1));
+    QCOMPARE(second_params.p3,
+             second_params.p2 - CoordinateF(Coordinate::FromOrientation(direction)) * 0.5);
+
+    rect_params.clear();
+
+    constexpr QColor expected_fill{100, 100, 100, 128};
+    constexpr QColor expected_edge{50, 50, 100, 128};
+    constexpr int expected_width = 1;
+
+    QCOMPARE(first_params.fill_color, expected_fill);
+    QCOMPARE(second_params.fill_color, expected_fill);
+
+    QCOMPARE(first_params.edge_color, expected_edge);
+    QCOMPARE(second_params.edge_color, expected_edge);
+
+    QCOMPARE(first_params.edge_width, expected_width);
+    QCOMPARE(second_params.edge_width, expected_width);
+}
+
+class TestTile final : public Tile {
+public:
+    void Draw(Coordinate, DrawContext&) const override {
+        ++rendered;
+    }
+    int getRendered() const {
+        return rendered;
+    }
+
+private:
+    mutable int rendered{0};
+};
+
+void TestYourApp::TestFloorDrawing() {
+    std::vector<std::shared_ptr<TestTile>> tiles{};
+
+    Floor floor{5, 12, 17};
+    for (int x = 3; x < 7; ++x) {
+        for (int y = 5; y < 12; ++y) {
+            auto new_tile = std::make_shared<TestTile>();
+            floor.SetTile(Coordinate2D(x, y), new_tile.get());
+            tiles.push_back(new_tile);
         }
+    }
+
+    for (int x = 10; x < 12; ++x) {
+        for (int y = 15; y < 17; ++y) {
+            auto new_tile = std::make_shared<TestTile>();
+            floor.SetTile(Coordinate2D(x, y), new_tile.get());
+            tiles.push_back(new_tile);
+        }
+    }
+
+    QPainter qpainter{};
+    Painter painter{qpainter};
+    DrawContext draw_context{painter};
+
+    floor.DrawFloor(draw_context);
+
+    for (const auto& tile : tiles) {
+        QVERIFY(tile->getRendered() == 1);
     }
 }
 
-void TestYourApp::init()
-{
-    Game game{15, 15};
-    Player player{game.GetContext(), {5, 5, 0}, Direction::kRight};
-    game.SetPlayer(&player);
-
-    Floor& floor0 = game.AddFloor(0);
-    Floor& floor1 = game.AddFloor(1);
-
-    EdgeWall edge_wall{game.GetContext()};
-    Victim victim{game.GetContext(), {7, 12, 0}, Direction::kLeft};
-    EmptyWall empty_wall;
-    Door door1;
-    Door door2;
-
-    FloorTile marble_tile{game.GetContext(), "floor4"};
-
-    floor0.SetWall({4, 4}, Direction::kUp, &edge_wall);
-    floor0.SetWall({5, 4}, Direction::kUp, &door1);
-    floor0.SetWall({6, 4}, Direction::kUp, &edge_wall);
-    floor0.SetWall({4, 3}, Direction::kUp, &edge_wall);
-    floor0.SetWall({5, 3}, Direction::kUp, &door2);
-    floor0.SetWall({6, 3}, Direction::kUp, &edge_wall);
-
-    MakeRoom(floor0, edge_wall, marble_tile, 4, 6, 0, 5);
-    MakeRoom(floor1, edge_wall, marble_tile, 4, 6, 0, 2);
-    MakeRoom(floor0, edge_wall, marble_tile, 0, 10, 6, 14);
-    floor0.SetWall({5, 5}, Direction::kDown, &empty_wall);
-
-    Stairs stair_up{game.GetContext(), {5, 1, 0}, Direction::kDown, false};
-    Stairs stair_down{game.GetContext(), {5, 1, 1}, Direction::kUp, true};
-
-    Controller controller{game};
-
-    MainWindow window{game, controller};
-    window.show();
-    QVERIFY2(window.isVisible(), "Главное окно не активируется");
-}
-
-void TestYourApp::TestDefault() {}
-
-void TestYourApp::cleanup()
-{
+void TestYourApp::cleanup() {
 }
 
 QTEST_MAIN(TestYourApp)

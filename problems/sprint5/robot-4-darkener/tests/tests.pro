@@ -41,6 +41,8 @@ HEADERS += \
         $$SUBMISSION_PATH/objects.h \
         $$SUBMISSION_PATH/player.h \
         $$SUBMISSION_PATH/utility/assets.h \
+        $$SUBMISSION_PATH/utility/darkener.h \
+        $$SUBMISSION_PATH/utility/darkeners.h \
         $$SUBMISSION_PATH/utility/painter.h \
         $$SUBMISSION_PATH/utility/geometry.h \
         $$SUBMISSION_PATH/utility/random.h \

@@ -160,10 +160,10 @@ void TestYourApp::TestField() {
     Floor& floor = field.GetFloor(2);
 
     floor.SetWall({0, 0}, Direction::kUp, new EdgeWall);
-    floor.SetWall({15, 21}, Direction::kDown, new EdgeWall);
+    floor.SetWall({14, 20}, Direction::kDown, new EdgeWall);
 
     QVERIFY(floor.GetWall({0, 0}, Direction::kUp) != nullptr);
-    QVERIFY(floor.GetWall({15, 21}, Direction::kDown) != nullptr);
+    QVERIFY(floor.GetWall({14, 20}, Direction::kDown) != nullptr);
 }
 
 void TestYourApp::TestCharacter() {
