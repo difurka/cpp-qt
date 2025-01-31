@@ -25,7 +25,7 @@
     <item>
      <widget class="QLineEdit" name="le_date">
       <property name="inputMask">
-       <string>00.00.0000;_</string>
+       <string>00.00.0000</string>
       </property>
       <property name="placeholderText">
        <string>00.00.0000</string>

@@ -7,6 +7,15 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
+static const std::vector<QString> months = {
+    QStringLiteral("января"), QStringLiteral("февраля"),
+    QStringLiteral("марта"), QStringLiteral("апреля"),
+    QStringLiteral("мая"), QStringLiteral("июня"),
+    QStringLiteral("июля"), QStringLiteral("августа"),
+    QStringLiteral("сентября"), QStringLiteral("октября"),
+    QStringLiteral("ноября"), QStringLiteral("декабря"),
+};
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -14,6 +23,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
 
 private:
     QString GetFormatType1(int day, int month, int year);

@@ -6,6 +6,8 @@
 
 #include <QIntValidator>
 
+// #include <iostream>
+
 int DaysPerMonth(int month, int year)
 {
     if (month == 2) {
@@ -36,21 +38,45 @@ int CalculateDaysFromStartYear(int day, int month, int year)
 
 QString MainWindow::GetFormatType1(int day, int month, int year)
 {
-    // Реализуйте метод форматирования даты.
+    QString result = "%1.%2.%3";
+    QString formatted = result
+                            .arg(day, 2, 10, QChar('0'))
+                            .arg(month, 2, 10, QChar('0'))
+                            .arg(year);
+    // ui->lbl_format_type1->setText(formatted);
+    return formatted;
 }
 
 QString MainWindow::GetFormatType2(int day, int month, int year)
 {
-    // Реализуйте метод форматирования даты.
+    QString result = "%1/%2/%3";
+    QString formatted = result
+                            .arg(month, 2, 10, QChar('0'))
+                            .arg(day, 2, 10, QChar('0'))
+                            .arg(year);
+    // ui->lbl_format_type2->setText(formatted);
+    return formatted;
 }
 
 QString MainWindow::GetFormatType3(int day, int month, int year)
 {
     // Реализуйте метод форматирования даты.
+    QString result = "%1 %2 %3 года";
+    QString formatted = result
+                            .arg(day, 2, 10, QChar('0'))
+                            .arg(months[month-1])
+                            .arg(year);
+    return formatted;
 }
 
 QString MainWindow::GetStrNumDays(int num_days, int year) {
-    // Метод должен возвращать текст о номере дня в году.
+    // auto days_number = CalculateDaysFromStartYear(ui->le_day->text().toInt(), ui->le_month->text().toInt(), ui->le_year->text().toInt());
+    QString message = "Это %1 день в %2 году";
+    QString formated_mes = message
+                               .arg(num_days)
+                               .arg(year);
+    // ui->lbl_message->setText(formated_mes);
+    return formated_mes;
 }
 
 MainWindow::MainWindow(QWidget *parent)
@@ -82,11 +108,28 @@ void MainWindow::ShowFormattedDate()
         return;
     }
 
+
+    auto day = ui->le_day->text().toInt();
+    auto month = ui->le_month->text().toInt();
+    auto year = ui->le_year->text().toInt();
+    if (DaysPerMonth(month,year) < day) {
+        SetError("Такой даты не существует");
+        return;
+    }
+    auto num_days = CalculateDaysFromStartYear(day, month, year);
+
     // Отобразим результаты.
     // Используйте DaysPerMonth для определения количества дней в месяце.
     // Используйте CalculateDaysFromStartYear для определения номера дня в году.
 
     // Используйте GetFormatType1, GetFormatType2, GetFormatType3 и GetStrNumDays
+    ui->lbl_message->setText(GetStrNumDays(num_days, year));
+    ui->lbl_format_type1->setText( GetFormatType1(day,month, year));
+    ui->lbl_format_type2->setText( GetFormatType2(day,month, year));
+    ui->lbl_format_type3->setText( GetFormatType3(day,month, year));
+    // GetFormatType1(day,month, year);
+    // GetFormatType2(day,month, year);
+    // GetFormatType3(day,month, year);
     // для определения надписей, которые нужно вывести пользователю.
     // Эти методы реализуйте самостоятельно.
 }
@@ -103,7 +146,7 @@ void MainWindow::on_le_date_textChanged(const QString&)
 {
     if(editing_now_) return;
 
-    editing_now_=true;
+    editing_now_ = true;
     // Пользователь изменил дату. Реализуйте слот.
     // Такой split разбивает строку по точкам.
     // Он возвращает значение типа QStringList,
@@ -114,10 +157,8 @@ void MainWindow::on_le_date_textChanged(const QString&)
         ui->le_month->setText(arr[1]);
         ui->le_year->setText(arr[2]);
     }
-
-    ShowFormattedDate();
     editing_now_=false;
-
+    ShowFormattedDate();
 
 }
 
@@ -129,13 +170,13 @@ void MainWindow::on_le_day_textChanged(const QString&)
 
     QString result = "%1.%2.%3";
     QString formatted = result
-                            .arg(ui->le_day->text().toStdString(), 2, 10, QChar('0'))
-                            .arg(ui->le_month->text().toStdString(), 2, 10, QChar('0'))
-                            .arg(ui->le_year->text());
+                            .arg(ui->le_day->text().toInt(), 2, 10, QChar('0'))
+                            .arg(ui->le_month->text().toInt(), 2, 10, QChar('0'))
+                            .arg(ui->le_year->text().toInt());
 
     ui->le_date->setText(formatted);
-    ShowFormattedDate();
     editing_now_=false;
+    ShowFormattedDate();
 }
 
 void MainWindow::on_le_month_textChanged(const QString&)
@@ -145,12 +186,13 @@ void MainWindow::on_le_month_textChanged(const QString&)
     editing_now_=true;
     QString result = "%1.%2.%3";
     QString formatted = result
-                            .arg(ui->le_day->text().toStdString(), 2, 10, QChar('0'))
-                            .arg(ui->le_month->text().toStdString(), 2, 10, QChar('0'))
-                            .arg(ui->le_year->text());
+                            .arg(ui->le_day->text().toInt(), 2, 10, QChar('0'))
+                            .arg(ui->le_month->text().toInt(), 2, 10, QChar('0'))
+                            .arg(ui->le_year->text().toInt());
     ui->le_date->setText(formatted);
-    ShowFormattedDate();
     editing_now_=false;
+    ShowFormattedDate();
+
 }
 
 void MainWindow::on_le_year_textChanged(const QString&)
@@ -160,10 +202,10 @@ void MainWindow::on_le_year_textChanged(const QString&)
     editing_now_=true;
     QString result = "%1.%2.%3";
     QString formatted = result
-                            .arg(ui->le_day->text(), 2, 10, QChar('0'))
-                            .arg(ui->le_month->text(), 2, 10, QChar('0'))
-                            .arg(ui->le_year->text());
+                            .arg(ui->le_day->text().toInt(), 2, 10, QChar('0'))
+                            .arg(ui->le_month->text().toInt(), 2, 10, QChar('0'))
+                            .arg(ui->le_year->text().toInt());
     ui->le_date->setText(formatted);
-    ShowFormattedDate();
     editing_now_=false;
+    ShowFormattedDate();
 }
