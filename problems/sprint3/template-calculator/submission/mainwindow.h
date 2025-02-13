@@ -69,6 +69,8 @@ private slots:
 
     void on_pb_mc_clicked();
 
+    void on_cmb_controller_currentIndexChanged(int index);
+
 private:
     Ui::MainWindow* ui;
 
