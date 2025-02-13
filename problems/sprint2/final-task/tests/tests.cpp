@@ -21,6 +21,7 @@
 
 #include <QtTest/QTest>
 
+#include <QDebug>
 
 template<typename T>
 void getChild(T*& child, QObject* parent, const QString& object_name, const QString& type_name)
@@ -185,8 +186,11 @@ void TestYourApp::checkLabels(
     auto result = l_result->text();
     auto formula = l_formula->text();
 
+
     QVERIFY2(memory == expected_memory, "Текст l_memory не совпадает с ожидаемым");
+
     QVERIFY2(result == expected_result, "Teкст l_result не совпадает с ожидаемым");
+
     QVERIFY2(formula == expected_formula, "Текст l_formula не совпадает с ожидаемым");
 }
 
@@ -309,6 +313,7 @@ void TestYourApp::TestMemory()
         pushButton(operations["/"]);
         pushButton("MR");
         pushButton("=");
+        qDebug() << l_result->text() << 1;
         QVERIFY2(l_result->text() == "1", "Текст l_result не совпадает с ожидаемым");
     }
 }

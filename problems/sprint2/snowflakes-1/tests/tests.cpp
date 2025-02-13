@@ -16,6 +16,7 @@
 #include <QtWidgets/QSlider>
 #include <cmath>
 
+#include <QDebug>
 #include "prac/QPainter"
 
 using namespace std;
@@ -129,7 +130,7 @@ void TestYourApp::ValidateSnowflake()
     double line_width = sld_line->value() / 15.;
 
     checkPens(prac::QPainter::pens, line_width);
-
+    qDebug() << prac::QPainter::lines.size() ;
     QVERIFY2(prac::QPainter::lines.size() == 6, "Количество линий, которые были нарисованы, отлично от шести");
     for (auto i = 0; i < 6; ++i)
     {

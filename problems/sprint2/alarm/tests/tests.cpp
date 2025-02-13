@@ -11,9 +11,10 @@
 #include <QtWidgets/QWidget>
 #include <QtWidgets/QLabel>
 
+#include <QDebug>
 #include <mainwindow.h>
 
-#include <string>
+// #include <string>
 
 using namespace std;
 
@@ -140,6 +141,8 @@ void TestYourApp::TestQTime(){
     auto childs = window->children();
 
     QVERIFY(timer->isOn() == true);
+
+    qDebug() <<"f"<< timer->getInterval() << 1000 - current_time.msec();
     QVERIFY(timer->getInterval() == 1000 - current_time.msec());
 
     prac::QTime::currentTime() = current_time2;
@@ -147,7 +150,8 @@ void TestYourApp::TestQTime(){
     timer->emitTimeout();
 
     QVERIFY(timer->isOn() == true);
-    QVERIFY(timer->getInterval() == 1000 - current_time2.msec());
+    qDebug() << timer->getInterval() << 1000 - current_time2.msec();
+    QVERIFY(timer->getInterval() == 1000 - current_time2.msec() );
 }
 
 void TestYourApp::cleanupTestCase()

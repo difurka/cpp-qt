@@ -26,3 +26,5 @@ inline Rational Pow(Rational lhs, Rational rhs) {
         return {IntegerPow(lhs.GetDenominator(), -pow), IntegerPow(lhs.GetNumerator(), -pow)};
     }
 }
+
+

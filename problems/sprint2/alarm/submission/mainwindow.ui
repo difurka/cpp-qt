@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>367</width>
-    <height>315</height>
+    <height>319</height>
    </rect>
   </property>
   <property name="contextMenuPolicy">
@@ -199,7 +199,7 @@
      <x>0</x>
      <y>0</y>
      <width>367</width>
-     <height>24</height>
+     <height>23</height>
     </rect>
    </property>
    <property name="contextMenuPolicy">
@@ -222,7 +222,8 @@
   </action>
   <action name="action_close">
    <property name="icon">
-    <iconset theme="application-exit"/>
+    <iconset theme="application-exit">
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Выход</string>
@@ -244,22 +245,6 @@
     <hint type="destinationlabel">
      <x>167</x>
      <y>121</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>MainWindow</sender>
-   <signal>customContextMenuRequested(QPoint)</signal>
-   <receiver>menu</receiver>
-   <slot>showNormal()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>183</x>
-     <y>157</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>87</x>
-     <y>45</y>
     </hint>
    </hints>
   </connection>
