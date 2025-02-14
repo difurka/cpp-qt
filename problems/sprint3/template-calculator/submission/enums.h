@@ -19,24 +19,12 @@ enum class ControlKey {
     EXTRA_KEY,  // Дополнительная экстра-кнопка.
 };
 
-// enum class ControllerType {
-//     UINT8_T,
-//     INT,
-//     INT64_T,
-//     SIZE_T,
-//     DOUBLE,
-//     FLOAT,
-//     RATIONAL,
-// };
-
 enum class ControllerType {
-    DOUBLE,
-    FLOAT,
     UINT8_T,
     INT,
     INT64_T,
     SIZE_T,
+    DOUBLE,
+    FLOAT,
     RATIONAL,
 };
-
-

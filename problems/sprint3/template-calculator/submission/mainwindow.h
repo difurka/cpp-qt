@@ -1,11 +1,9 @@
 #pragma once
 
-// #include "calculator.h"
 #include "enums.h"
 #include <QMainWindow>
 #include <functional>
 
-// Реальзуйте класс главного окна.
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,7 +15,7 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow {
     Q_OBJECT
 
-public:
+ public:
     MainWindow(QWidget* parent = nullptr);
     ~MainWindow();
 
@@ -43,48 +41,30 @@ private slots:
     void on_pb_7_clicked();
     void on_pb_8_clicked();
     void on_pb_9_clicked();
-    void on_pb_dot_clicked();
 
     void on_pb_delete_clicked();
-
     void on_pb_c_clicked();
-
     void on_pb_plus_minus_clicked();
-
     void on_pb_plus_clicked();
-
     void on_pb_minus_clicked();
-
     void on_pb_mul_clicked();
-
     void on_pb_div_clicked();
-
     void on_pb_pow_clicked();
-
     void on_pb_equal_clicked();
 
     void on_pb_ms_clicked();
-
     void on_pb_mr_clicked();
-
     void on_pb_mc_clicked();
 
     void on_cmb_controller_currentIndexChanged(int index);
 
-private:
+    void on_tb_extra_clicked();
+
+ private:
     Ui::MainWindow* ui;
 
     std::function<void(int key)> cb_digital_key_;
     std::function<void(Operation key)> cb_operation_key_;
     std::function<void(ControlKey key)> cb_control_key_;
     std::function<void(ControllerType controller)> cb_type_numbers_;
-    // Operation current_operation_ = Operation::NO_OPERATION;
-    // QString input_number_{"0"}; // вводимое число в виде строки.
-    // Calculator calculator_;
-    // double active_number_; // число, которое сейчас отображается в l_result
-    // double memory_cell_; //число, сохранённое в память.
-    // QString memory_cell_;
-    // bool memory_saved_{false};
-    // void AddResultNumber(int number);
-    // void AddFormulaSymbol(QString operation, Operation type);
 };

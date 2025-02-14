@@ -14,7 +14,7 @@
 
 #include "utils.h"
 #include "calculator_tests.h"
-#include "calculator.h"
+// #include "calculator.h"
 #include "controller.h"
 
 
@@ -195,6 +195,7 @@ void TestYourApp::checkExtraButton(const QString& type)
             "Text on extra button for Rational type should be \"/\"");
     }
     else {
+        qDebug() << type << "; " <<!tb_extra->isVisible();
         QVERIFY2(!tb_extra->isVisible(), "Extra button should not be visible for integer types");
     }
 }

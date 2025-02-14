@@ -38,7 +38,7 @@ std::uint8_t FromString<std::uint8_t>(const std::string& number) {
 template<class Number>
 class Controller
 {
-public:
+ public:
     Controller() {}
 
     void BindWithMainWindow(MainWindow* main_window) {
@@ -56,7 +56,6 @@ public:
         view_->SetProcessControlKeyCallback([this](ControlKey key){
             ProcessControlKey(key);
         });
-
         RevealView();
     }
 
@@ -245,7 +244,7 @@ private:
         view_->SetExtraKey(GetExtraKey());
     }
 
-private:
+ private:
     std::function<std::optional<Error>(Number number)> operation_;
     std::string operation_name_;
 

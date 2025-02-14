@@ -1,4 +1,3 @@
-// Ваше решение задачи последнего урока темы "Перегрузка операций".
 #pragma once
 #include <numeric>
 #include <cstdlib>
