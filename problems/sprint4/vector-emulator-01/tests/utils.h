@@ -18,7 +18,7 @@ void getChild(T*& dst, QObject* parent, const QString& object_name, const QStrin
     {
         message = QString("В %2 не найден %1").arg(object_name).arg(parent->objectName());;
     }
-
+    qDebug() << message;
     QVERIFY2(dst, qPrintable(message));
 }
 

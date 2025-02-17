@@ -198,6 +198,7 @@ void TestYourApp::checkExpectedVector() const {
     for (size_t i = 0; i < vec.size(); ++i) {
         const QString expected_string = QString("%1: %2").arg(i).arg(vec.at(i));
         const auto& actual_string = actual_vector.at(i);
+        qDebug() << "exp" << expected_string << "; act:" << actual_string << ";i: " << i <<"\n";
         QVERIFY2(expected_string == actual_string, "Строка вектора не совпадает с ожидаемой");
     }
 }
@@ -453,14 +454,20 @@ void TestYourApp::TestErase() {
 }
 
 void TestYourApp::TestInsert() {
+    qDebug() << "1\n";
     pushBackVector(default_lines);
+    qDebug() << "2\n";
     setCurrentElement(3);
+    qDebug() << "3\n";
     insert("New string");
+    qDebug() << "4\n";
     checkModel();
+    qDebug() << "5\n";
     setCurrentElement(3);
+    qDebug() << "6\n";
     insert("New new string");
     checkModel();
-
+    qDebug() << "7\n";
     setCurrentElement(static_cast<int>(vec.size()));
     insert("New string at the end");
     checkModel();
