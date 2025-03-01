@@ -824,8 +824,11 @@ void TestYourApp::TestsOrT() {
         };
     pushBackVector(lines);
     setCurrentElement(1);
+    qDebug() << "1\n";
     checkModel();
+     qDebug() << "2\n";
     sOrT();
+      qDebug() << "1\n";
     checkModel();
 }
 
