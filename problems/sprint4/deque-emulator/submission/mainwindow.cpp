@@ -2,11 +2,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include <QMessageBox>
-#include <QFileDialog>
-#include <QFile>
-#include <QTextStream>
-
 #include <algorithm>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -146,7 +141,7 @@ void MainWindow::on_pb_erase_clicked() {
 }
 
 void MainWindow::on_list_widget_currentRowChanged(int n) {
-    if (n >=0 && n <= (int)deque_model_.items.size()) {
+    if (n >=0 && n <= static_cast<int>(deque_model_.items.size())) {
         deque_model_.iterator = deque_model_.items.begin() +n;
         ApplyIterator();
     }

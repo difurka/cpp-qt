@@ -13,7 +13,6 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-
     friend class TestMainWindow;
 
 public:
