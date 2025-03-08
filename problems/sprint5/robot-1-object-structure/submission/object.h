@@ -4,6 +4,23 @@
 #include "utility/geometry.h"
 #include "utility/utility.h"
 
+/*
+Класс Object является базовым классом для:
+персонажей (Character),
+лестниц (Stairs).
+Каждый объект обладает характеристиками:
+    Местоположение объекта на карте — это позиция, которая задаётся координатами.
+               Используется структура Coordinate из файла utility/geometry.h.
+    Видимость объекта — bool visibility_.
+
+Структура Coordinate описывает положение объекта в игровом мире.
+    x_pos и y_pos — положение по вертикали и горизонтали на плане этажа;
+    z_pos — номер этажа.
+
+Структура GameContext будет содержать ссылки на все необходимые данные для функционирования объектов
+ */
+class Character;
+
 class Object {
 private:
     GameContext& context_;
@@ -35,4 +52,6 @@ public:
     }
     GameContext& GetContext() const {return context_;}
 
+    virtual void Interact(Character&, Direction) {};
+    virtual bool CanCover(const Character&, Direction) const {return !IsVisible();};
 };
