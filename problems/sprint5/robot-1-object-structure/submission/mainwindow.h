@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include "game.h"
+#include "controller.h"
 
 #include <QMainWindow>
 
@@ -17,11 +18,12 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(Game& game, QWidget *parent = nullptr);
+    MainWindow(Game& game, Controller& controller, QWidget *parent = nullptr);
     ~MainWindow();
 
 private:
     Ui::MainWindow *ui;
     Game& game_;
+    Controller& controller_;
 };
 #endif // MAINWINDOW_H

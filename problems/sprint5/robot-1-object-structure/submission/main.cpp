@@ -24,6 +24,7 @@
 
 #include "objects.h"
 #include "player.h"
+#include "controller.h"
 
 #include <QApplication>
 

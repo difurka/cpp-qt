@@ -26,7 +26,12 @@ public:
     bool CanGo(Direction dir) const {
         // return CanCover(*this, dir);
         Coordinate coord = GetPosition() + Coordinate::FromDirection(dir);
-        std::all_of(GetContext().object_map, CanCover(*this, dir));
-        return coord.Is
+        for (auto el : GetContext().object_map)
+            if (!el.CanCover(coord, dir)) return false;
+        return true;
+    }
+
+    virtual bool IsActive() const {
+        return false;
     }
 };

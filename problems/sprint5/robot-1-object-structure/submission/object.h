@@ -4,6 +4,8 @@
 #include "utility/geometry.h"
 #include "utility/utility.h"
 
+#include <QDebug>
+
 /*
 Класс Object является базовым классом для:
 персонажей (Character),

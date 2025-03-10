@@ -19,6 +19,7 @@ SOURCES += \
 
 HEADERS += \
     context.h \
+    controller.h \
     character.h \
     characters.h \
     field.h \
