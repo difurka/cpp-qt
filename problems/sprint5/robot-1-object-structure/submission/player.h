@@ -5,13 +5,29 @@ class Player : public Character {
 
 public:
     using Character::Character;
+    Player(GameContext& context, Coordinate coordinate, Direction dir)
+        : Character(context, coordinate, dir) {
+        auto text = QString( "Player spawned on %1 dir %2" ).arg(GetPosition()).arg(GetDirection());
+        qInfo() << text;
+    }
+
     void GoCommand(Direction dir) {
-        if (!CanPassWall()) {
-            // Interact(); // wall
-        } else if (!CanGo()) {
-            // Interact() // all
+        if (!CanPassWall(dir)) { // Если робот не может пройти стену, то нужно вызвать у стены Interact и завершить метод.
+            auto wall = GetWall(dir);
+            wall->Interact(*this, dir);
+            qInfo() << "Player stoped on wall";
+        } else if (!CanGo(dir)) { //  то нужно вызвать Interact для всех объектов, которые находятся в целевой клетке, и завершить метод
+            Coordinate coord = GetPosition() + Coordinate::FromDirection(dir);
+            // список объектов в этой клетке
+            auto objects = GetContext().object_map.Get(coord);
+            for (auto &el: objects) {
+                el->Interact(*this, dir);
+            }
+            qInfo() << "Player stoped on object";
         } else {
-            // SetPosition();
+            Coordinate coord = GetPosition() + Coordinate::FromDirection(dir);
+            SetPosition(coord);
+            qInfo() << "Player moves";
         }
     }
 

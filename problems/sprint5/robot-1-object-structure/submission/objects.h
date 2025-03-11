@@ -1,6 +1,7 @@
 #pragma once
 // #include "utility/geometry.h"
-#include "object.h"
+// #include "object.h"
+#include "character.h"
 class Character;
 class Stairs : public Object {
 private:
@@ -21,6 +22,12 @@ public:
                                 + Coordinate{0, 0, down_ ? -1 : 1}
                                 + Coordinate::FromDirection(dir);
             SetPosition(new_position);
+            if (down_) {
+                qInfo() << "Go stairs down";
+            } else {
+                qInfo() << "Go stairs up";
+            }
+
         } else {
             qInfo() << "Trying to go stairs in the wrong dir";
         }

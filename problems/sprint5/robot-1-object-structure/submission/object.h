@@ -3,6 +3,7 @@
 
 #include "utility/geometry.h"
 #include "utility/utility.h"
+// #include "character.h" // ???
 
 #include <QDebug>
 
@@ -54,6 +55,13 @@ public:
     }
     GameContext& GetContext() const {return context_;}
 
+    /*Метод Interact будет вызываться,
+    когда персонаж character,
+    двигаясь в направлении dir, попытается переместиться на клетку, в которой расположен объект.
+    Например, метод Interact у лестницы будет перемещать персонажа на другой этаж, если он подошёл с нужной стороны.
+    */
     virtual void Interact(Character&, Direction) {};
+
+    // Метод CanCover определяет, может ли персонаж character встать на клетку с объектом.
     virtual bool CanCover(const Character&, Direction) const {return !IsVisible();};
 };

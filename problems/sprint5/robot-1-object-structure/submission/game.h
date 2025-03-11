@@ -1,5 +1,6 @@
 #pragma once
 #include "context.h"
+#include "player.h"
 
 /*
 Класс Game хранит все игровые объекты в контейнере типа ObjectMap<Object>.
@@ -8,11 +9,12 @@
 */
 class Field;
 class Floor;
-class Player;
+// class Player;
 
 class Game {
 public:
-    Game() {}
+    Game(int w, int h): field_(w,h) {
+    }
 
     GameContext& GetContext() {
         return context_;
@@ -20,7 +22,9 @@ public:
 
     Floor& AddFloor(int level) {
         field_.AddFloor(level);
+        return field_.GetFloor(level);
     }
+
     void SetPlayer(Player* player) {
         player_ = player;
     }
@@ -34,7 +38,7 @@ public:
     }
 
     Floor& GetCurrentFloor() {
-        return player_->GetPosition().z_poz;
+        return field_.GetFloor(player_->GetPosition().z_pos) ;
     }
 
 private:

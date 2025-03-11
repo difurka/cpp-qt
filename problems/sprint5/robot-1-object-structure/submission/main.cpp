@@ -25,6 +25,7 @@
 #include "objects.h"
 #include "player.h"
 #include "controller.h"
+#include "game.h"
 
 #include <QApplication>
 
@@ -37,7 +38,7 @@ int main(int argc, char *argv[])
     game.SetPlayer(&player);
 
     Floor& floor0 = game.AddFloor(0);
-    Floor& floor1 = game.AddFloor(1);
+    // Floor& floor1 = game.AddFloor(1);
 
     EdgeWall edge_wall;
     Door door1;

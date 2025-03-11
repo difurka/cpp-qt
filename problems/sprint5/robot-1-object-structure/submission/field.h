@@ -8,7 +8,14 @@ class Tile {
 
 class Wall {
 public:
+
+    //определит, может ли персонаж пройти через стенку
     virtual bool CanPass(const Character& character, Direction dir) const = 0;
+
+    /*Метод Interact будет вызываться,
+    когда персонаж character,
+    двигаясь в направлении dir, попытается переместиться на клетку, в которой расположен объект.
+    */
     virtual void Interact(Character&, Direction) {}
 };
 
@@ -18,16 +25,16 @@ struct Cell {
     Wall* top_wall = nullptr;
 };
 
+// описывает один этаж
 class Floor {
 public:
     Floor(int level, int w, int h)
         : cells_(Array2D<Cell>(w+1,h+1))
         , level_(level)
-        // , w_(w)
-        // , h_(h)
     { }
 
     int GetLevel() const {return level_;}
+
     void SetTile(Coordinate2D where, Tile* tile) {
         cells_.Get(where).floor = tile;
     }
@@ -40,8 +47,6 @@ public:
 private:
     Array2D<Cell> cells_;
     int level_;
-    // int w_;
-    // int h_;
     Wall*& GetWallPtr(Coordinate2D where, Direction dir) {
         switch (dir) {
         case Direction::kUp :
@@ -62,7 +67,9 @@ public:
     Field(int w, int h)
         : w_(w)
         , h_(h){}
+
     int GetWidth() const {return w_;}
+
     int GetHeight() const {return h_;}
 
     Size GetRect() const {
@@ -71,6 +78,7 @@ public:
     void AddFloor(int level) {
         map_[level] = Floor(level, w_, h_);
     }
+
     Floor& GetFloor(int floor) {
         return map_.at(floor);
     }
@@ -78,6 +86,7 @@ public:
     const Floor& GetFloor(int floor) const {
         return map_.at(floor);
     }
+
 private:
     std::map<int, Floor> map_;
     int w_;
