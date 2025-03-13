@@ -10,12 +10,12 @@
 
 #include <QtTest>
 
-#include <iostream>
+// #include <iostream>
 
-#include <algorithm>
-#include <iterator>
-#include <vector>
-#include <string>
+// #include <algorithm>
+// #include <iterator>
+// #include <vector>
+// #include <string>
 
 #include "field_elements.h"
 #include "player.h"
@@ -24,7 +24,7 @@
 
 #include "mainwindow.h"
 
-#include "utils.h"
+// #include "utils.h"
 
 
 class TestYourApp : public QObject
@@ -48,8 +48,12 @@ private:
 
 void TestYourApp::init()
 {
-    Game game{};
-    window = new MainWindow{game};
+    Game game{10, 10};
+    Controller controller{game};
+
+    // MainWindow w{game, controller};
+    // Game game{};
+    window = new MainWindow{game, controller};
 
     QVERIFY2(window != nullptr, "Главное окно не создано");
     window->show();

@@ -28,9 +28,18 @@ struct Cell {
 // описывает один этаж
 class Floor {
 public:
+    Floor()
+        : cells_(Array2D<Cell>(1,1))
+        ,level_(0)
+        ,w_(0)
+        ,h_(0) {
+
+    };
     Floor(int level, int w, int h)
         : cells_(Array2D<Cell>(w+1,h+1))
-        , level_(level)
+        ,level_(level)
+        ,w_(w)
+        ,h_(h)
     { }
 
     int GetLevel() const {return level_;}
@@ -44,9 +53,15 @@ public:
     Wall* GetWall(Coordinate2D where, Direction dir) {
         return GetWallPtr(where, dir);
     }
+
+    int Square() const {
+        return w_*h_;
+    }
 private:
     Array2D<Cell> cells_;
     int level_;
+    int w_;
+    int h_;
     Wall*& GetWallPtr(Coordinate2D where, Direction dir) {
         switch (dir) {
         case Direction::kUp :
@@ -76,6 +91,7 @@ public:
         return {GetWidth(), GetHeight()};
     }
     void AddFloor(int level) {
+        // Floor f = Floor(level, w_, h_);
         map_[level] = Floor(level, w_, h_);
     }
 

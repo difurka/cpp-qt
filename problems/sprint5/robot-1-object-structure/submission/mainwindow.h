@@ -5,6 +5,7 @@
 #include "controller.h"
 
 #include <QMainWindow>
+#include <QKeyEvent>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -21,26 +22,24 @@ public:
     MainWindow(Game& game, Controller& controller, QWidget *parent = nullptr);
     ~MainWindow();
 
-    // void keyPressEvent(QKeyEvent *event) override {
-    //     if (event->isAutoRepeat()) {
-    //         return QWidget::keyPressEvent(event);
-    //     }
-    //     switch (event->key()) {
-    //     case Qt::Key_Right :
-    //         controller_.OnMoveKey(Direction::kRight); break;
-    //     case Qt::Key_Left:
-    //         controller_.OnMoveKey(Direction::kLeft); break;
-    //     case Qt::Key_Up :
-    //         controller_.OnMoveKey(Direction::kUp); break;
-    //     case Qt::Key_Down :
-    //         controller_.OnMoveKey(Direction::kDown); break;
-
-    //         // Здесь обрабатываются различные клавиши.
-
-    //     default:
-    //         QWidget::keyPressEvent(event); // call base class implementation
-    //     }
-    // }
+protected:
+    void keyPressEvent(QKeyEvent *event) {
+        if (event->isAutoRepeat()) {
+            return QWidget::keyPressEvent(event);
+        }
+        switch (event->key()) {
+            case Qt::Key_Right :
+                controller_.OnMoveKey(Direction::kRight); break;
+            case Qt::Key_Left:
+                controller_.OnMoveKey(Direction::kLeft); break;
+            case Qt::Key_Up :
+                controller_.OnMoveKey(Direction::kUp); break;
+            case Qt::Key_Down :
+                controller_.OnMoveKey(Direction::kDown); break;
+            default:
+                QWidget::keyPressEvent(event);
+        }
+    }
 private:
     Ui::MainWindow *ui;
     Game& game_;

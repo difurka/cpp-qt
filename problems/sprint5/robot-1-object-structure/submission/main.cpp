@@ -1,24 +1,3 @@
-// #include "field_elements.h"
-// #include "mainwindow.h"
-
-// #include "player.h"
-
-// #include <QApplication>
-
-// int main(int argc, char *argv[])
-// {
-//     QApplication a(argc, argv);
-
-//     Game game{};
-//     Player player{game.GetContext(), {10, 10, 0}, Direction::kRight};
-//     FloorTile floor1;
-//     EdgeWall wall1;
-
-//     MainWindow w{game};
-//     w.show();
-//     return a.exec();
-// }
-
 #include "field_elements.h"
 #include "mainwindow.h"
 
@@ -38,7 +17,7 @@ int main(int argc, char *argv[])
     game.SetPlayer(&player);
 
     Floor& floor0 = game.AddFloor(0);
-    // Floor& floor1 = game.AddFloor(1);
+    Floor& floor1 = game.AddFloor(1);
 
     EdgeWall edge_wall;
     Door door1;
@@ -64,3 +43,112 @@ int main(int argc, char *argv[])
     w.show();
     return a.exec();
 }
+
+
+/*
+Player spawned on  "5,5,0"  dir  "right"
+<<< Moving in direction  "up"
+Changing direction
+>>> New player position:  "5,5,0"  dir:  "up"
+<<< Moving in direction  "up"
+Trying to go
+Player moves
+>>> New player position:  "5,4,0"  dir:  "up"
+<<< Moving in direction  "up"
+Trying to go
+Player stoped on wall
+Opening door
+>>> New player position:  "5,4,0"  dir:  "up"
+<<< Moving in direction  "up"
+Trying to go
+Player moves
+>>> New player position:  "5,3,0"  dir:  "up"
+<<< Moving in direction  "up"
+Trying to go
+Player stoped on wall
+Opening door
+>>> New player position:  "5,3,0"  dir:  "up"
+<<< Moving in direction  "up"
+Trying to go
+Player moves
+>>> New player position:  "5,2,0"  dir:  "up"
+<<< Moving in direction  "up"
+Trying to go
+Player stoped on object
+Go stairs up
+>>> New player position:  "5,0,1"  dir:  "up"
+<<< Moving in direction  "right"
+Changing direction
+>>> New player position:  "5,0,1"  dir:  "right"
+<<< Moving in direction  "right"
+Trying to go
+Player moves
+>>> New player position:  "6,0,1"  dir:  "right"
+<<< Moving in direction  "down"
+Changing direction
+>>> New player position:  "6,0,1"  dir:  "down"
+<<< Moving in direction  "down"
+Trying to go
+Player moves
+>>> New player position:  "6,1,1"  dir:  "down"
+<<< Moving in direction  "left"
+Changing direction
+>>> New player position:  "6,1,1"  dir:  "left"
+<<< Moving in direction  "left"
+Trying to go
+Player stoped on object
+Trying to go stairs in the wrong dir
+>>> New player position:  "6,1,1"  dir:  "left"
+<<< Moving in direction  "up"
+Changing direction
+>>> New player position:  "6,1,1"  dir:  "up"
+<<< Moving in direction  "up"
+Trying to go
+Player moves
+>>> New player position:  "6,0,1"  dir:  "up"
+<<< Moving in direction  "left"
+Changing direction
+>>> New player position:  "6,0,1"  dir:  "left"
+<<< Moving in direction  "left"
+Trying to go
+Player moves
+>>> New player position:  "5,0,1"  dir:  "left"
+<<< Moving in direction  "down"
+Changing direction
+>>> New player position:  "5,0,1"  dir:  "down"
+<<< Moving in direction  "down"
+Trying to go
+Player stoped on object
+Go stairs down
+>>> New player position:  "5,2,0"  dir:  "down"
+<<< Moving in direction  "down"
+Trying to go
+Player moves
+>>> New player position:  "5,3,0"  dir:  "down"
+<<< Moving in direction  "down"
+Trying to go
+Player moves
+>>> New player position:  "5,4,0"  dir:  "down"
+<<< Moving in direction  "down"
+Trying to go
+Player moves
+>>> New player position:  "5,5,0"  dir:  "down"
+<<< Moving in direction  "down"
+Trying to go
+Player stoped on wall
+>>> New player position:  "5,5,0"  dir:  "down"
+<<< Moving in direction  "right"
+Changing direction
+>>> New player position:  "5,5,0"  dir:  "right"
+<<< Moving in direction  "right"
+Trying to go
+Player stoped on wall
+>>> New player position:  "5,5,0"  dir:  "right"
+<<< Moving in direction  "left"
+Changing direction
+>>> New player position:  "5,5,0"  dir:  "left"
+<<< Moving in direction  "left"
+Trying to go
+Player stoped on wall
+>>> New player position:  "5,5,0"  dir:  "left"
+ */

@@ -6,6 +6,7 @@
 #include <tuple>
 #include <string>
 #include <sstream>
+#include <QString>
 
 enum Orientation {
     kVertical, kHorizontal
@@ -21,6 +22,15 @@ inline Direction Invert(Direction dir) {
         case kLeft: return kRight;
         case kRight: return kLeft;
         case kDown: return kUp;
+    }
+}
+
+inline QString DirectionText(Direction dir) {
+    switch(dir) {
+    case kUp: return "up";
+    case kLeft: return "left";
+    case kRight: return "right";
+    case kDown: return "down";
     }
 }
 
@@ -120,10 +130,21 @@ struct Coordinate {
         return ToTuple() == r.ToTuple();
     }
 
+    QString GetTextCoord() const {
+        return "\"" + QString::number(x_pos) +"," + QString::number(y_pos) + "," + QString::number(z_pos) + "\"";
+    }
+
     int x_pos = 0;
     int y_pos = 0;
     int z_pos = 0;
 };
+
+inline std::ostream& operator<<(std::ostream& out, const Coordinate& coord) {
+    out  << coord.x_pos << "," << coord.y_pos << "," << coord.z_pos;
+    return out;
+}
+
+
 
 inline std::optional<Direction> GetDirectionToward(Coordinate from, Coordinate to) {
     if (from.x_pos < to.x_pos) {

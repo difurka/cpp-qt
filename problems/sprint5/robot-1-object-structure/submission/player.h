@@ -7,8 +7,7 @@ public:
     using Character::Character;
     Player(GameContext& context, Coordinate coordinate, Direction dir)
         : Character(context, coordinate, dir) {
-        auto text = QString( "Player spawned on %1 dir %2" ).arg(GetPosition()).arg(GetDirection());
-        qInfo() << text;
+        qInfo() << "Player spawned on " << GetPosition().GetTextCoord() << " dir " << DirectionText(GetDirection());
     }
 
     void GoCommand(Direction dir) {
