@@ -10,7 +10,7 @@ public:
     void OnMoveKey(Direction dir) {
         // Напишите реализацию метода.
         qInfo() << "<<< Moving in direction " << DirectionText(dir);
-        Player robot = game_.GetPlayer();
+        Player& robot = game_.GetPlayer();
         if (dir == robot.GetDirection()) {
             robot.GoCommand(dir);
             qDebug() << "Trying to go";
@@ -19,7 +19,7 @@ public:
             qInfo() << "Changing direction";
         }
 
-        qInfo() << ">>> New player position:" << robot.GetPosition().GetTextCoord() << " dir " << DirectionText(dir);
+        qInfo() << ">>> New player position:" << GetTextCoord(robot.GetPosition()) << " dir " << DirectionText(dir);
     }
 
     void OnReleaseMoveKey(Direction) {

@@ -6,6 +6,8 @@
 #include <QPixmap>
 #include <QPainter>
 
+// Графический движок
+
 class Painter {
 public:
     Painter(QPainter& painter) : painter_{painter} {}
@@ -16,12 +18,19 @@ public:
         return Get3dPointWoOffset(pos) + field_offset_;
     }
 
+    // метод, который определит сдвиг всей сцены
     void PreparePaint(CoordinateF player_pos, Size field_size, Size window_size);
 
     void DrawFloor(const Asset& asset, Coordinate pos, double darkness=0);
 
+    //Стены бывают двух направлений и отрисовываются по-разному.
+    // Стены, которые идут вдоль оси X, на плане этажа изображаются горизонтальными линями,
+    // при их отрисовке передаётся параметр Orientation::kHorizontal.
+    // Стены, расположенные вдоль Y, на плане изображаются вертикальными линиями,
+    // для них используйте Orientation::kVertical
     void DrawWall(const Asset& asset, Coordinate pos, Orientation dir, double darkness=0);
 
+    //  метод для рисования спрайтов:
     void DrawObject(const Asset& object_sprite, CoordinateF pos, double darkness=0);
 
     void DrawRect(CoordinateF p1, CoordinateF p2, CoordinateF p3, QColor fill_color, QColor edge_color, double edge_width=1, double darkness=0);

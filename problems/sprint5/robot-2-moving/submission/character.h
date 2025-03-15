@@ -23,7 +23,7 @@ public:
     // проверить, может ли персонаж пройти в нужном направлении
     bool CanPassWall(Direction dir) const {
         auto wall = GetWall(dir);
-        if (!wall) return false;
+        if (!wall) return true;
         return wall->CanPass(*this,dir);
     }
 

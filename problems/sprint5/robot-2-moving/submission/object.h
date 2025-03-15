@@ -22,6 +22,20 @@
 
 Структура GameContext будет содержать ссылки на все необходимые данные для функционирования объектов
  */
+
+inline QString DirectionText(Direction dir) {
+    switch(dir) {
+    case kUp: return "up";
+    case kLeft: return "left";
+    case kRight: return "right";
+    case kDown: return "down";
+    }
+}
+
+inline QString GetTextCoord(Coordinate coord) {
+    return  QString::number(coord.x_pos) +"," + QString::number(coord.y_pos) + "," + QString::number(coord.z_pos);
+}
+
 class Character;
 
 class Object {

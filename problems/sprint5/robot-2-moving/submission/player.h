@@ -7,7 +7,7 @@ public:
     using Character::Character;
     Player(GameContext& context, Coordinate coordinate, Direction dir)
         : Character(context, coordinate, dir) {
-        qInfo() << "Player spawned on " << GetPosition().GetTextCoord() << " dir " << DirectionText(GetDirection());
+        qInfo() << "Player spawned on " << GetTextCoord(GetPosition()) << " dir " << DirectionText(GetDirection());
     }
 
     void GoCommand(Direction dir) {

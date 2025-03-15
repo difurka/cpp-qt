@@ -92,6 +92,7 @@ FieldCoordinate Painter::Get3dPointWoOffset(CoordinateF pos) const {
     return pos.x_pos * x_off - pos.y_pos * y_off + (pos.z_pos - current_flow_) * z_off;
 }
 
+// Также перед рисованием нужно вызвать метод, который определит сдвиг всей сцены
 void Painter::PreparePaint(CoordinateF player_pos, Size field_size, Size window_size) {
 #ifdef PRAC_TESTS
     ::last_player_pos = player_pos;
@@ -147,6 +148,7 @@ void Painter::DrawWall(const Asset &asset, Coordinate pos, Orientation dir, doub
     painter_.setOpacity(1);
 }
 
+//  метод для рисования спрайтов
 void Painter::DrawObject(const Asset &object_sprite, CoordinateF pos, double darkness) {
     auto p1 = ToQPointF(Get3dPoint(pos));
     auto p2 = ToQPointF(Get3dPoint(pos + CoordinateF{1, 1, 0}));

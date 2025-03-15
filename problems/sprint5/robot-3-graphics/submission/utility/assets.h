@@ -8,6 +8,16 @@
 
 #include <ranges>
 
+// Графические ресурсы часто называют ассетами
+// Графические ресурсы часто называют ассетами (от англ. asset — «ценность»).
+// В игре будут использоваться два вида ассетов:
+// тайлы (от англ. tile — «плитка») и спрайты (от англ. sprite, двумерное изображение, предназначенное для наложения на другое изображение).
+// И те и другие задаются PNG-изображениями, которые хранятся в ресурсах.
+
+// Из тайлов будут состоять стены и пол.
+
+// Для задания персонажей и предметов понадобятся спрайты. Спрайт накладывается на холст в нужном месте.
+// Спрайты и тайлы задаются структурой Asset
 struct Asset {
     void Rotate(int right_angles) {
         pixmap = pixmap.transformed(QTransform().rotate(right_angles * 90));
@@ -17,7 +27,7 @@ struct Asset {
         return !pixmap.isNull();
     }
 
-    QPixmap pixmap;
+    QPixmap pixmap; // изображение
 };
 
 struct AnimatedAsset {
@@ -58,6 +68,7 @@ private:
 using AssetInDirections = TAssetInDirections<Asset>;
 using AnimatedAssetInDirections = TAssetInDirections<AnimatedAsset>;
 
+//  загрузки ассетов из ресурсов
 class AssetLoader {
 public:
     Asset LoadByPath(const QString& path) const {
@@ -87,6 +98,7 @@ public:
         return result;
     }
 
+    // загружать спрайты для объекта
     AssetInDirections LoadWithDirection(const std::string& category, const std::string& prefix) const {
         return AssetInDirections(
             LoadSprite(category, prefix + "-up"),

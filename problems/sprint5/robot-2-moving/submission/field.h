@@ -48,6 +48,7 @@ public:
         cells_.Get(where).floor = tile;
     }
     void SetWall(Coordinate2D where, Direction dir, Wall* wall) {
+        // Wall*& wall_find = GetWallPtr(where, dir);
         GetWallPtr(where, dir) = wall;
     }
     Wall* GetWall(Coordinate2D where, Direction dir) {

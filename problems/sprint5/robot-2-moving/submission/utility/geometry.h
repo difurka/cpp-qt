@@ -34,14 +34,14 @@ inline Orientation ToOrientation(Direction dir) {
     }
 }
 
-inline QString DirectionText(Direction dir) {
-    switch(dir) {
-    case kUp: return "up";
-    case kLeft: return "left";
-    case kRight: return "right";
-    case kDown: return "down";
-    }
-}
+// inline QString DirectionText(Direction dir) {
+//     switch(dir) {
+//     case kUp: return "up";
+//     case kLeft: return "left";
+//     case kRight: return "right";
+//     case kDown: return "down";
+//     }
+// }
 
 struct Size {
     int width = 0;
@@ -130,9 +130,9 @@ struct Coordinate {
         return ToTuple() == r.ToTuple();
     }
 
-    QString GetTextCoord() const {
-        return  QString::number(x_pos) +"," + QString::number(y_pos) + "," + QString::number(z_pos);
-    }
+    // QString GetTextCoord() const {
+    //     return  QString::number(x_pos) +"," + QString::number(y_pos) + "," + QString::number(z_pos);
+    // }
 
     int x_pos = 0;
     int y_pos = 0;

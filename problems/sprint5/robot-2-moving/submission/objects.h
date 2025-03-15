@@ -20,8 +20,8 @@ public:
             Coordinate current_position = character.GetPosition();
             auto new_position = current_position
                                 + Coordinate{0, 0, down_ ? -1 : 1}
-                                + Coordinate::FromDirection(dir);
-            SetPosition(new_position);
+                                + Coordinate::FromDirection(dir)*2;
+            character.SetPosition(new_position);
             if (down_) {
                 qInfo() << "Go stairs down";
             } else {
