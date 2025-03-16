@@ -15,7 +15,13 @@ class Floor;
 
 class Game {
 public:
-    Game(AssetLoader loader, int w, int h): field_(w,h), asset_loader_(loader) {
+    Game(AssetLoader loader, int w, int h)
+        : field_(w,h)
+        , asset_loader_(loader) {
+    }
+
+    Game(int w, int h)
+        : field_(w,h) {
     }
 
     GameContext& GetContext() {
@@ -43,22 +49,22 @@ public:
         return field_.GetFloor(player_->GetPosition().z_pos) ;
     }
 
-    void DrawFrame() {
+    void DrawFrame(DrawContext draw_context) {
 
         Coordinate pos = player_->GetPosition();
         // auto level = pos.z_pos;
         Floor floor = field_.GetFloor(pos.z_pos);
-        floor.DrawFloor(draw_context_);
+        floor.DrawFloor(draw_context);
         auto h = field_.GetHeight();
         auto w = field_.GetWidth();
         for (auto y = 0; y < h; ++y) {
-            floor.DrawHWalls(draw_context_, y);
+            floor.DrawHWalls(draw_context, y);
             for (auto x = 0; x < w; ++x) {
-                floor.DrawVWall(draw_context_, {x,y});
+                floor.DrawVWall(draw_context, {x,y});
                 const auto& objects = object_map_.Get(pos);
                 for (auto el : objects) {
                     if (el->IsVisible() && el->GetPosition() == pos) {
-                        el->Draw(draw_context_);
+                        el->Draw(draw_context);
                     }
                 }
             }
@@ -72,5 +78,4 @@ private:
     Field field_;
     RandomGen random_;         // Для внесения случайных изменений.
     AssetLoader asset_loader_;
-    DrawContext draw_context_;
 };

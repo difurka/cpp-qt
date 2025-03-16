@@ -47,7 +47,7 @@ protected:
         // Создадим рисователь и графический движок.
         QPainter q_painter{this};
         Painter painter{q_painter};
-        DrawContext draw_context{painter};
+        // DrawContext draw_context{painter};
 
         Size window_size{width(), height()};
 

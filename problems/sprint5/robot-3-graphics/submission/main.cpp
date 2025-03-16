@@ -31,6 +31,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     AssetLoader loader;
+     // DrawContext draw_context{painter};
 
     Game game{loader, 15, 15};
     Player player{game.GetContext(), {5, 5, 0}, Direction::kRight};

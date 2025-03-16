@@ -33,7 +33,7 @@ public:
         load.LoadTile("floors", asset_name_);
     }
 
-    virtual void Draw(DrawContext& context, Coordinate pos) const {
+    virtual void Draw(Coordinate pos, DrawContext& context) const {
         context.painter.DrawFloor(GetAsset(), pos);
     }
 };
@@ -112,7 +112,7 @@ public:
             for (int j = 0; j < w_; ++j) {
                 Coordinate pos({.x_pos=j,.y_pos=i, .z_pos=level_});
                 auto cell = cells_.Get({j,i});
-                cell.floor->Draw(context, pos);
+                cell.floor->Draw(pos, context);
             }
         }
     }

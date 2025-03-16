@@ -73,4 +73,5 @@ public:
     bool CanPass(const Character&, Direction) const override {
         return false;
     }
+
 };

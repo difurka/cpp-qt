@@ -22,12 +22,12 @@ public:
         , dir_(dir)
         , down_(down) {
         AssetLoader load;
-        load.LoadWithDirection("objects", down ? "dstair" : "stair")
+        load.LoadWithDirection("objects", down ? "dstair" : "stair");
     }
     Direction GetDirection() const {return dir_;}
     bool IsDown() const {return down_;}
 
-    void Interact(Character& character, Direction dir) {
+    void Interact(Character& character, Direction dir) override {
         if (dir == Invert(dir_)) {
             Coordinate current_position = character.GetPosition();
             auto new_position = current_position
