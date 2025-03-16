@@ -58,13 +58,14 @@ public:
         floor.DrawFloor(draw_context);
         auto h = field_.GetHeight();
         auto w = field_.GetWidth();
-        for (auto y = 0; y < h; ++y) {
+        for (auto y = 0; y < h+1; ++y) {
             floor.DrawHWalls(draw_context, y);
-            for (auto x = 0; x < w; ++x) {
+            for (auto x = 0; x < w + 1; ++x) {
                 floor.DrawVWall(draw_context, {x,y});
                 const auto& objects = object_map_.Get(pos);
                 for (auto el : objects) {
-                    if (el->IsVisible() && el->GetPosition() == pos) {
+                    if (el!=nullptr && el->IsVisible() && el->GetPosition() == pos) {
+                        // if (el.)
                         el->Draw(draw_context);
                     }
                 }

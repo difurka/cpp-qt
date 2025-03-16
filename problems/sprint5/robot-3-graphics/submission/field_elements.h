@@ -4,7 +4,21 @@
 #include "character.h"
 
 class FloorTile : public Tile {
-    using Tile::Tile;
+public:
+    // using Tile::Tile;
+    FloorTile(
+        const GameContext& context,
+        std::string asset_name)
+        : Tile()
+        , context_(context)
+        , asset_name_(asset_name)    {
+        AssetLoader load;
+        // auto asset_name = asset.Rotate(Random());
+        load.LoadTile("floors", asset_name_);
+    }
+private :
+    GameContext context_;
+    std::string asset_name_;
 };
 
 class EmptyTile : public Tile {
@@ -66,7 +80,12 @@ class EdgeWall : public Wall {
 private :
         GameContext context_;
 public:
-         EdgeWall(const GameContext& context) : Wall(), context_(context) {
+         EdgeWall(
+        const GameContext& context
+        )
+        : Wall()
+        , context_(context)
+    {
              AssetLoader load;
              load.LoadTile("walls", "wall-white");
          }

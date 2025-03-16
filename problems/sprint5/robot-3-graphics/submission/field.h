@@ -20,19 +20,19 @@ private:
 
 
 class Tile : public ElementWithAsset {
-private :
-    GameContext context_;
-    std::string asset_name_;
+
 public:
     using ElementWithAsset::ElementWithAsset;
-    Tile(const GameContext& context, std::string asset_name)
-        : ElementWithAsset()
-        , context_(context)
-        , asset_name_(asset_name)    {
-        AssetLoader load;
-        // auto asset_name = asset.Rotate(Random());
-        load.LoadTile("floors", asset_name_);
-    }
+    // Tile(
+    //     // const GameContext& context,
+    //     std::string asset_name)
+    //     : ElementWithAsset()
+    //     // , context_(context)
+    //     , asset_name_(asset_name)    {
+    //     AssetLoader load;
+    //     // auto asset_name = asset.Rotate(Random());
+    //     load.LoadTile("floors", asset_name_);
+    // }
 
     virtual void Draw(Coordinate pos, DrawContext& context) const {
         context.painter.DrawFloor(GetAsset(), pos);
@@ -113,7 +113,8 @@ public:
             for (int j = 0; j < w_; ++j) {
                 Coordinate pos({.x_pos=j,.y_pos=i, .z_pos=level_});
                 auto cell = cells_.Get({j,i});
-                cell.floor->Draw(pos, context);
+                if (cell.floor!=nullptr)
+                    cell.floor->Draw(pos, context);
             }
         }
     }
@@ -125,14 +126,18 @@ public:
         for (int j = 0; j < w_; ++j) {
             Coordinate pos({.x_pos=j,.y_pos=y, .z_pos=level_});
             auto cell = cells_.Get({j,y});
-            cell.top_wall->Draw(context, pos, Orientation::kHorizontal);
+            auto wall = cell.top_wall;
+            if (wall != nullptr)
+                wall->Draw(context, pos, Orientation::kHorizontal);
         }
     }
 
     void DrawVWall(DrawContext& context, Coordinate pos) const {
         // Нарисуйте left_wall у клетки в позиции pos.
             auto cell = cells_.Get({pos.x_pos, pos.y_pos});
-            cell.top_wall->Draw(context, pos, Orientation::kVertical);
+        auto wall = cell.left_wall;
+            if (wall!=nullptr)
+            wall->Draw(context, pos, Orientation::kVertical);
     }
 
 private:

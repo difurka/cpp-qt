@@ -47,37 +47,43 @@ protected:
 
         // Создадим рисователь и графический движок.
         QPainter q_painter{this};
-        Painter painter{q_painter};
+        // Painter painter{q_painter};
         // DrawContext draw_context{painter};
 
-        Size window_size{width(), height()};
+        // Size window_size{width(), height()};
 
-        // Поле размером 2 на 2, персонаж в клетке с координатами 0, 0.
-        Coordinate player_pos{0,0};
-        Size field_size{2,2};
+        // // Поле размером 2 на 2, персонаж в клетке с координатами 0, 0.
+        // Coordinate player_pos{0,0};
+        // Size field_size{2,2};
 
-        // Настроим рисование.
-        painter.PreparePaint(player_pos, field_size, window_size);
+        // // Настроим рисование.
+        // painter.PreparePaint(player_pos, field_size, window_size);
 
-        // Загрузим ассеты.
-        AssetLoader loader;
-        Asset wall1_tile = loader.LoadTile("walls", "wall-white");
-        Asset wall2_tile = loader.LoadTile("walls", "wall-black");
-        Asset floor_tile = loader.LoadTile("floors", "grass");
-        AssetInDirections robot_sprite = loader.LoadWithDirection("characters", "robot");
+        // // Загрузим ассеты.
+        // AssetLoader loader;
+        // Asset wall1_tile = loader.LoadTile("walls", "wall-white");
+        // Asset wall2_tile = loader.LoadTile("walls", "wall-black");
+        // Asset floor_tile = loader.LoadTile("floors", "grass");
+        // AssetInDirections robot_sprite = loader.LoadWithDirection("characters", "robot");
 
-        // Нарисуем пол.
-        painter.DrawFloor(floor_tile, {0,0});
-        painter.DrawFloor(floor_tile, {0,1});
-        painter.DrawFloor(floor_tile, {1,0});
+        // // Нарисуем пол.
+        // painter.DrawFloor(floor_tile, {0,0});
+        // painter.DrawFloor(floor_tile, {0,1});
+        // painter.DrawFloor(floor_tile, {1,0});
 
-        // Нарисуем стены.
-        painter.DrawWall(wall1_tile, {0,0}, Orientation::kHorizontal);
-        painter.DrawWall(wall1_tile, {1,0}, Orientation::kHorizontal);
-        painter.DrawWall(wall2_tile, {0,0}, Orientation::kVertical);
+        // // Нарисуем стены.
+        // painter.DrawWall(wall1_tile, {0,0}, Orientation::kHorizontal);
+        // painter.DrawWall(wall1_tile, {1,0}, Orientation::kHorizontal);
+        // painter.DrawWall(wall2_tile, {0,0}, Orientation::kVertical);
 
-        // Нарисуем робота.
-        painter.DrawObject(robot_sprite.Get(Direction::kRight), {0,0}, Orientation::kVertical);
+        // // Нарисуем робота.
+        // painter.DrawObject(robot_sprite.Get(Direction::kRight), {0,0}, Orientation::kVertical);
+
+        QPainter qpainter{};
+        Painter painter{qpainter};
+        DrawContext draw_context{painter};
+        Floor floor{5, 12, 17};
+        floor.DrawFloor(draw_context);
     }
 
 private:
