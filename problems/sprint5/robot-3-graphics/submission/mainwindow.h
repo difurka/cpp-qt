@@ -82,6 +82,7 @@ protected:
         QPainter qpainter{};
         Painter painter{qpainter};
         DrawContext draw_context{painter};
+        FlashlightDarkener darkener;
         Floor floor{5, 12, 17};
         floor.DrawFloor(draw_context);
     }

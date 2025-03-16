@@ -52,6 +52,18 @@ struct CoordinateF {
         return {y_pos, -x_pos, z_pos};
     }
 
+    auto ToTuple() const {
+        return std::tuple{x_pos, y_pos, z_pos};
+    }
+
+    auto operator <=>(const CoordinateF r) const {
+        return ToTuple() <=> r.ToTuple();
+    }
+
+    auto operator ==(const CoordinateF r) const {
+        return ToTuple() == r.ToTuple();
+    }
+
     double x_pos = 0;
     double y_pos = 0;
     double z_pos = 0;

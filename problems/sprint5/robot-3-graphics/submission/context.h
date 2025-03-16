@@ -6,6 +6,7 @@
 
 class Field;
 class Object;
+class Darkener;
 
 class RandomGen;
 class AssetLoader;
@@ -22,7 +23,7 @@ class Painter;
 
 struct DrawContext {
     Painter& painter;
-    // const Darkener& darkener;
+    const Darkener& darkener;
 };
 =======
 >>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))

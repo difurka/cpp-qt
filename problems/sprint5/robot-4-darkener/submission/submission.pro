@@ -22,6 +22,8 @@ HEADERS += \
     characters.h \
     context.h \
     controller.h \
+    darkener.h \
+    darkeners.h \
     field.h \
     field_elements.h \
     game.h \
