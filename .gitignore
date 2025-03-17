@@ -43,8 +43,5 @@ problems/sprint5/logs-for-converter/build/*
 problems/sprint5/robot-1-object-structure/build/*
 problems/sprint5/robot-2-moving/build/*
 problems/sprint5/robot-3-graphics/build/*
-<<<<<<< HEAD
 problems/sprint5/robot-4-darkener/build/*
-=======
-problems/sprint5/robot-4-darkener/build/*
->>>>>>> 664a1f5 (robot-4-darkener finished)
+problems/sprint5/robot-5-smart-ptr/build/*

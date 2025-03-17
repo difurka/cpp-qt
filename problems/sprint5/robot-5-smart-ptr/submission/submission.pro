@@ -12,8 +12,6 @@ CONFIG += c++20
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-INCLUDEPATH += $$MOCK_LIB
-
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
@@ -24,6 +22,8 @@ HEADERS += \
     characters.h \
     context.h \
     controller.h \
+    darkener.h \
+    darkeners.h \
     field.h \
     field_elements.h \
     game.h \
@@ -32,6 +32,7 @@ HEADERS += \
     objects.h \
     player.h \
     utility/assets.h \
+    utility/animation.h \
     utility/painter.h \
     utility/geometry.h \
     utility/random.h \

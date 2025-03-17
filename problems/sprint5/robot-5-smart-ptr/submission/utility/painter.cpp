@@ -154,6 +154,7 @@ void Painter::DrawObject(const Asset &object_sprite, CoordinateF pos, double dar
     painter_.setOpacity(1 - darkness);
     DrawImageMatchPoints(painter_, object_sprite.pixmap, kObjectSpritePlateLT, kObjectSpritePlateRB, p1, p2);
     painter_.setOpacity(1);
+    last_darkness_ = darkness;
 }
 
 void Painter::DrawRect(CoordinateF pos1, CoordinateF pos2, CoordinateF pos3, QColor fill_color, QColor edge_color, double edge_width, double darkness) {
