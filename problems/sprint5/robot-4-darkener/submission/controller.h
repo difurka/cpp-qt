@@ -18,6 +18,7 @@ public:
             robot.SetDirection(dir);
             qInfo() << "Changing direction";
         }
+        callback_();
 
         qInfo() << ">>> New player position:" << GetTextCoord(robot.GetPosition()) << " dir " << DirectionText(dir);
     }
@@ -28,9 +29,10 @@ public:
 
     void SetRedrawCallback(const std::function<void()>& callback) {
         // MainWindow::repaint;
-        callback();
+        callback_ = callback;
     }
 
 private:
     Game& game_;
+    std::function<void()> callback_;
 };
