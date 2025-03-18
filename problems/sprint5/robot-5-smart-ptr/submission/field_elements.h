@@ -13,7 +13,7 @@ public:
         , asset_name_(asset_name)    {
 
         auto asset = context_.asset_loader.LoadTile("floors", asset_name);
-        auto angle = context_.random.GetInRange(1,44);
+        auto angle = context_.random.GetInRange(0,3);
         asset.Rotate(angle);
         qInfo() << angle;
         SetAsset(asset);
