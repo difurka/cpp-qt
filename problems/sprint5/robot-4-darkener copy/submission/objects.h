@@ -52,7 +52,10 @@ public:
         //qInfo() << "Stairs pos" <<  QString::fromStdString(ToString(GetPosition()))
         //        << "Stairs Draw  Get(dir_)" <<  QString::number(sprites_->Get(dir_));
         //void Painter::DrawObject(const Asset &object_sprite, CoordinateF pos, double darkness)
-        draw_context.painter.DrawObject(sprites_->Get(dir_), GetPosition(), draw_context.darkener.GetDarkness(GetPosition()));
+        draw_context.painter.DrawObject(
+            sprites_->Get(dir_), 
+            GetPosition(), 
+            draw_context.darkener.GetDarkness(GetPosition()));
     }
 
 protected:

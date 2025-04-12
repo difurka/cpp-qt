@@ -7,6 +7,7 @@ public:
     using Character::Character;
     Player(GameContext& context, Coordinate coordinate, Direction dir)
         : Character(context, coordinate, dir) {
+        name_ = "player";
         qInfo() << "Player spawned on " << GetTextCoord(GetPosition()) << " dir " << DirectionText(GetDirection());
     }
 

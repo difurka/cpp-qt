@@ -33,8 +33,9 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Game game{15, 15};
-    Player player{game.GetContext(), {5, 5, 0}, Direction::kRight};
-    auto ptr_player = std::make_shared<Player>(player);
+    // auto game = std::make_shared<Game>(10, 12);
+    // Player player{game.GetContext(), Coordinate{5, 5, 0}, Direction::kRight};
+    std::shared_ptr<Player> ptr_player = std::make_shared<Player>(game.GetContext(), Coordinate{5, 5, 0}, Direction::kRight);
     game.SetPlayer(ptr_player);
     Floor& floor0 = game.AddFloor(0);
     Floor& floor1 = game.AddFloor(1);
@@ -46,8 +47,8 @@ int main(int argc, char *argv[])
         return std::make_shared<Door>();
     };
 
-    auto victim = std::make_shared<Victim>(game.GetContext(), Coordinate{7, 12, 0}, Direction::kLeft);
-    auto empty_wall = std::make_shared<EmptyWall>();
+    std::shared_ptr<Victim> victim = std::make_shared<Victim>(game.GetContext(), Coordinate{7, 12, 0}, Direction::kLeft);
+    std::shared_ptr<EmptyWall> empty_wall = std::make_shared<EmptyWall>();
 
 
     auto make_marble_tile = [&]{return std::make_shared<FloorTile>(game.GetContext(), "floor4");};

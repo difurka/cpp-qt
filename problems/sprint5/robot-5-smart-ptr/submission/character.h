@@ -1,7 +1,6 @@
 #pragma once
 #include "object.h"
 #include "field.h"
-#include "utility/random.h"
 #include "utility/assets.h"
 // Персонаж — объект класса Character — задаётся четырьмя спрайтами,
 // которые соответствуют четырём направлениям взгляда.
@@ -26,7 +25,7 @@ public:
     Character(GameContext& context, Coordinate coordinate, Direction dir)
         : Object(context, coordinate)
         , dir_(dir){
-        SetSprites(context.asset_loader.LoadWithDirection("characters", "robot"));
+        // SetSprites(context.asset_loader.LoadWithDirection("characters", "robot"));
     }
 
     void SetDirection(Direction dir) {dir_ = dir;}

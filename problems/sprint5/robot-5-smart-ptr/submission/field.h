@@ -28,7 +28,7 @@ class Tile : public ElementWithAsset {
 public:
     using ElementWithAsset::ElementWithAsset;
     virtual void Draw(Coordinate pos, DrawContext& context) const {
-        context.painter.DrawFloor(GetAsset(), pos);
+        context.painter.DrawFloor(GetAsset(), pos, context.darkener.GetDarkness(pos));
     }
 };
 

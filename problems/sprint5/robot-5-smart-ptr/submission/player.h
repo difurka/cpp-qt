@@ -7,6 +7,7 @@ public:
     using Character::Character;
     Player(GameContext& context, Coordinate coordinate, Direction dir)
         : Character(context, coordinate, dir) {
+        SetSprites(context.asset_loader.LoadWithDirection("characters", "robot"));
         qInfo() << "Player spawned on " << GetTextCoord(GetPosition()) << " dir " << DirectionText(GetDirection());
     }
 

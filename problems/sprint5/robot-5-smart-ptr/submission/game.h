@@ -2,6 +2,7 @@
 #include "context.h"
 #include "player.h"
 #include <memory>
+#include "utility/random.h"
 
 /*
 Класс Game хранит все игровые объекты в контейнере типа ObjectMap<Object>.
@@ -52,7 +53,7 @@ public:
 
     void DrawFrame(DrawContext draw_context) {
 
-        Coordinate pos = player_->GetPosition();
+
         Floor floor = GetCurrentFloor();
         floor.DrawFloor(draw_context);
 
@@ -61,6 +62,7 @@ public:
         for (auto y = 0; y < h+1; ++y) {
             floor.DrawHWalls(draw_context, y);
             for (auto x = 0; x < w + 1; ++x) {
+                Coordinate pos{y, x, floor.GetLevel()};
                 floor.DrawVWall(draw_context, {x,y,floor.GetLevel()});
                 const auto& objects = object_map_.Get(pos);
                 for (auto& el : objects) {

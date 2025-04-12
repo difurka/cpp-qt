@@ -21,6 +21,7 @@ public:
         : Object(context, coordinate)
         , dir_(dir)
         , down_(down) {
+        name_ = "stair";
         AssetLoader load;
         load.LoadWithDirection("objects", down ? "dstair" : "stair");
     }
@@ -48,7 +49,9 @@ public:
     void Draw(DrawContext& context) const override {
         // Получите ассет из sprites_ на основе направления
         // взгляда персонажа и нарисуйте его.
-        auto asset = sprites_.value().Get(GetDirection());
-        context.painter.DrawObject(asset, GetPosition(), context.darkener.GetDarkness(GetPosition()));
+        context.painter.DrawObject(
+            sprites_->Get(dir_), //asset, 
+            GetPosition(), 
+            context.darkener.GetDarkness(GetPosition()));
     }
 };

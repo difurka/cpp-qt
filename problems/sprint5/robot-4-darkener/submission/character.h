@@ -11,6 +11,7 @@ class Character : public Object {
 private:
     Direction dir_;
     std::optional<AssetInDirections> sprites_;
+
 protected:
     Wall* GetWall(Direction dir) const {
         auto coord = GetPosition();
@@ -26,6 +27,8 @@ public:
     Character(GameContext& context, Coordinate coordinate, Direction dir)
         : Object(context, coordinate)
         , dir_(dir){
+        name_ = "character";
+        qInfo() << "character-robot";
         SetSprites(context.asset_loader.LoadWithDirection("characters", "robot"));
     }
 
@@ -60,6 +63,7 @@ public:
     void Draw(DrawContext& context) const override {
         // Получите ассет из sprites_ на основе направления
         // взгляда персонажа и нарисуйте его.
+        // qDebug() << "draw" << name_;
         auto asset = sprites_->Get(dir_); //sprites_.value().Get(GetDirection());
         context.painter.DrawObject(asset, GetPosition(),context.darkener.GetDarkness(GetPosition()));
     }

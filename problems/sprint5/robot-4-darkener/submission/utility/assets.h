@@ -61,7 +61,7 @@ using AnimatedAssetInDirections = TAssetInDirections<AnimatedAsset>;
 class AssetLoader {
 public:
     Asset LoadByPath(const QString& path) const {
-        qDebug() << "Loading " << path;
+        // qDebug() << "Loading " << path;
         QPixmap asset{path};
         assert(!asset.isNull());
         return {asset};

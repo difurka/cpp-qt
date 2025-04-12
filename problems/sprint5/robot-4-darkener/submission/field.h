@@ -27,23 +27,13 @@ class Tile : public ElementWithAsset {
 public:
     using ElementWithAsset::ElementWithAsset;
     virtual void Draw(Coordinate pos, DrawContext& context) const {
-        context.painter.DrawFloor(GetAsset(), pos);
+        context.painter.DrawFloor(GetAsset(), pos, context.darkener.GetDarkness(pos));
     }
 };
 
 class Wall : public ElementWithAsset  {
-//private :
-    // GameContext context_;
 public:
-    // Wall(
-    //     // const GameContext& context
-    //      )
-    //     : ElementWithAsset()
-    //     // , context_(context)
-    // {
-    //     // AssetLoader load;
-    //     // load.LoadTile("walls", "wall-white");
-    // }
+
     using ElementWithAsset::ElementWithAsset;
 
     //определит, может ли персонаж пройти через стенку

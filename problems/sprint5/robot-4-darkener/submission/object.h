@@ -40,9 +40,12 @@ inline QString GetTextCoord(Coordinate coord) {
 class Character;
 
 class Object {
+public:
+     QString name_{"object"};
 private:
     GameContext& context_;
     Coordinate coordinate_;
+    // QString name_{"object"};
     bool visibility_{true};
     void PlaceToMap() {context_.object_map.Place(coordinate_, this);}
     void RemoveFromMap() {context_.object_map.Remove(coordinate_, this);}

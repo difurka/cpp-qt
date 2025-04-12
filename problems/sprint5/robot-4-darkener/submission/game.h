@@ -51,8 +51,7 @@ public:
 
     void DrawFrame(DrawContext draw_context) {
 
-        Coordinate pos = player_->GetPosition();
-        // auto level = pos.z_pos;
+
         Floor floor = GetCurrentFloor();
         floor.DrawFloor(draw_context);
 
@@ -62,10 +61,13 @@ public:
         for (auto y = 0; y < h+1; ++y) {
             floor.DrawHWalls(draw_context, y);
             for (auto x = 0; x < w + 1; ++x) {
+                Coordinate pos{y, x, floor.GetLevel()};
                 floor.DrawVWall(draw_context, {x,y,floor.GetLevel()});
                 const auto& objects = object_map_.Get(pos);
+                // qInfo() << "In Draw: \n";
                 for (auto& el : objects) {
                     if (el!=nullptr && el->IsVisible() && el->GetPosition() == pos) {
+                        // qInfo() << el->name_ << QString::fromStdString(ToString(pos));
                         el->Draw(draw_context);
                     }
                 }

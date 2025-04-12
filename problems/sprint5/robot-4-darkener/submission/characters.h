@@ -8,6 +8,7 @@ public:
         : Character(context, coordinate, dir) {
         // AssetLoader load;
         // load.LoadWithDirection("characters", "victim");
+        name_ = "victim";
         SetSprites(context.asset_loader.LoadWithDirection("characters", "victim")); //Загрузка ассетов
     }
 };
