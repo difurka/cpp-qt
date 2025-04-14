@@ -8,6 +8,11 @@ constexpr double kWallHeight = 1.5;
 constexpr double kCellWidth = 25;
 constexpr double kIsometryAngle = 30 * std::numbers::pi_v<double> / 180;
 
+constexpr int kInventoryItemSize = 25;
+constexpr int kInventoryItemPadding = 5;
+constexpr int kInventoryItemMargin = 5;
+const QColor kInventoryBackgroundColor(230, 200, 230, 128);
+
 constexpr FieldCoordinate x_off{kCellWidth, 0};
 static const FieldCoordinate y_off = kCellWidth * FieldCoordinate{std::sin(kIsometryAngle), -std::cos(kIsometryAngle)};
 constexpr FieldCoordinate z_off{0, -kWallHeight * kCellWidth};
@@ -168,4 +173,11 @@ void Painter::DrawRect(CoordinateF pos1, CoordinateF pos2, CoordinateF pos3, QCo
     painter_.setBrush(DarkenColor(fill_color, darkness));
     std::vector points = {p1, p2, p3, p4};
     painter_.drawPolygon(points.data(), points.size());
+}
+
+void Painter::DrawInventoryItem(int offset, const Asset& asset) {
+    auto x = kInventoryItemMargin * (offset + 1) + kInventoryItemSize * offset;
+    auto y = kInventoryItemMargin;
+    painter_.fillRect(x, y, kInventoryItemSize, kInventoryItemSize, kInventoryBackgroundColor);
+    painter_.drawPixmap(QRect(x + kInventoryItemPadding, y + kInventoryItemPadding, kInventoryItemSize - 2 * kInventoryItemPadding, kInventoryItemSize - 2 * kInventoryItemPadding), asset.pixmap, QRect(0, 0, asset.pixmap.width(), asset.pixmap.height()));
 }

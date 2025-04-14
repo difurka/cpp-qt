@@ -1,5 +1,5 @@
 #pragma once
-<<<<<<< HEAD
+
 #include "object.h"
 #include "field.h"
 
@@ -45,5 +45,3 @@ public:
         return false;
     }
 };
-=======
->>>>>>> 541e3aa (Обновление репы из коммита d47d2edd58e101f1b791602c719e21967478ae5b (#14))

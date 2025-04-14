@@ -15,6 +15,7 @@ CONFIG += c++20
 INCLUDEPATH += $$MOCK_LIB
 
 SOURCES += \
+    loaders.cpp \
     main.cpp \
     mainwindow.cpp \
     utility/painter.cpp
@@ -24,16 +25,21 @@ HEADERS += \
     characters.h \
     context.h \
     controller.h \
-    field.h \
     field_elements.h \
+    field.h \
     game.h \
+    inventory.h \
+    level_loader.h \
     mainwindow.h \
     object.h \
     objects.h \
     player.h \
+    utility/animation.h \
     utility/assets.h \
-    utility/painter.h \
+    utility/darkener.h \
+    utility/darkeners.h \
     utility/geometry.h \
+    utility/painter.h \
     utility/random.h \
     utility/timer.h \
     utility/utility.h
@@ -47,4 +53,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    game.qrc
+    game.qrc \
+    levels.qrc

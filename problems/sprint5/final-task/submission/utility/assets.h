@@ -4,6 +4,7 @@
 
 #include <QTransform>
 #include <QPixmap>
+#include <QPainter>
 #include <QDebug>
 
 #include <ranges>
@@ -11,6 +12,13 @@
 struct Asset {
     void Rotate(int right_angles) {
         pixmap = pixmap.transformed(QTransform().rotate(right_angles * 90));
+    }
+
+    void ChangeColor(QColor dest) {
+        QPainter paint(&pixmap);
+        paint.setBrush(dest);
+        paint.setCompositionMode(QPainter::CompositionMode_SourceAtop);
+        paint.drawRect(0, 0, pixmap.width(), pixmap.height());
     }
 
     operator bool() const {

@@ -13,7 +13,6 @@
 #include "utility/timer.h"
 #include "characters.h"
 
-
 class TestYourApp : public QObject
 {
     Q_OBJECT
@@ -88,6 +87,7 @@ void TestYourApp::TestPaintEvent() {
     QVERIFY(direction == Direction::kRight);
     QVERIFY(radius == 7);
     QVERIFY(distance == 4);
+
 }
 
 
@@ -112,7 +112,7 @@ void TestYourApp::TestDarkness() {
     FlashlightDarkener used_darkener(start_point, radius, direction, distance);
 
     double expected_darkness = used_darkener.GetDarkness(CoordinateF(12, 3, 0));
-    qDebug() << expected_darkness << " -jj- " << last_darkness;
+
     QVERIFY(expected_darkness == last_darkness);
 
 }

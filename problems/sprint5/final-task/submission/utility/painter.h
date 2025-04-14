@@ -26,6 +26,8 @@ public:
 
     void DrawRect(CoordinateF p1, CoordinateF p2, CoordinateF p3, QColor fill_color, QColor edge_color, double edge_width=1, double darkness=0);
 
+    void DrawInventoryItem(int offset, const Asset& asset);
+    
 #ifdef PRAC_TESTS
     static CoordinateF GetPlayerPos();
 #endif

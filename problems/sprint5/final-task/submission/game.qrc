@@ -113,5 +113,36 @@
         <file>resources/sprites/dstair-left.png</file>
         <file>resources/sprites/dstair-right.png</file>
         <file>resources/sprites/dstair-up.png</file>
+        <file>resources/sprites/fire/0000.png</file>
+        <file>resources/sprites/fire/0001.png</file>
+        <file>resources/sprites/fire/0002.png</file>
+        <file>resources/sprites/fire/0003.png</file>
+        <file>resources/sprites/fire/0004.png</file>
+        <file>resources/sprites/fire/0005.png</file>
+        <file>resources/sprites/fire/0006.png</file>
+        <file>resources/sprites/fire/0007.png</file>
+        <file>resources/sprites/fire/0008.png</file>
+        <file>resources/sprites/fire/0009.png</file>
+        <file>resources/sprites/fire/0010.png</file>
+        <file>resources/sprites/fire/0011.png</file>
+        <file>resources/sprites/fire/0012.png</file>
+        <file>resources/sprites/fire/0013.png</file>
+        <file>resources/sprites/fire/0014.png</file>
+        <file>resources/sprites/fire/0015.png</file>
+        <file>resources/sprites/fire/0016.png</file>
+        <file>resources/sprites/fire/0017.png</file>
+        <file>resources/sprites/fire/0018.png</file>
+        <file>resources/sprites/fire/0019.png</file>
+        <file>resources/sprites/fire/0020.png</file>
+        <file>resources/sprites/hydrant.png</file>
+        <file>resources/sprites/key.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>resources/levels/main_level.json</file>
+        <file>resources/levels/demo_level.json</file>
+    </qresource>
+    <qresource prefix="/inventory">
+        <file>resources/sprites/drop.png</file>
+        <file>resources/sprites/inventory-key.png</file>
     </qresource>
 </RCC>
