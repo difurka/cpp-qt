@@ -2,6 +2,12 @@
 #define MAINWINDOW_H
 
 #include "game.h"
+<<<<<<< HEAD
+#include "controller.h"
+
+#include <QMainWindow>
+#include <QKeyEvent>
+=======
 
 #include <QMainWindow>
 
@@ -17,6 +23,33 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+<<<<<<< HEAD
+    MainWindow(Game& game, Controller& controller, QWidget *parent = nullptr);
+    ~MainWindow();
+
+protected:
+    void keyPressEvent(QKeyEvent *event) {
+        if (event->isAutoRepeat()) {
+            return QWidget::keyPressEvent(event);
+        }
+        switch (event->key()) {
+            case Qt::Key_Right :
+                controller_.OnMoveKey(Direction::kRight); break;
+            case Qt::Key_Left:
+                controller_.OnMoveKey(Direction::kLeft); break;
+            case Qt::Key_Up :
+                controller_.OnMoveKey(Direction::kUp); break;
+            case Qt::Key_Down :
+                controller_.OnMoveKey(Direction::kDown); break;
+            default:
+                QWidget::keyPressEvent(event);
+        }
+    }
+private:
+    Ui::MainWindow *ui;
+    Game& game_;
+    Controller& controller_;
+=======
     MainWindow(Game& game, QWidget *parent = nullptr);
     ~MainWindow();
 

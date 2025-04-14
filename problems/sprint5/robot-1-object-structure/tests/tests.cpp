@@ -48,6 +48,14 @@ private:
 
 void TestYourApp::init()
 {
+<<<<<<< HEAD
+    Game game{10, 10};
+    Controller controller{game};
+
+    // MainWindow w{game, controller};
+    // Game game{};
+    window = new MainWindow{game, controller};
+=======
     Game game{};
     window = new MainWindow{game};
 
